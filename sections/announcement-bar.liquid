@@ -1,8 +1,28 @@
 <section class="announcement-bar-section announcement-bar-appear" style="padding-top: {{ section.settings.padding_top | default: 12 }}px; padding-bottom: {{ section.settings.padding_bottom | default: 12 }}px;">
   <div class="announcement-bar__inner">
-    <span class="announcement-bar__text">{{ section.settings.announcement_text }}</span>
+    {% assign messages = section.blocks | where: 'type', 'message' %}
+    {% if messages.size > 0 %}
+      {% for block in messages %}
+        <span class="announcement-bar__text" data-announcement-index="{{ forloop.index0 }}" style="display: {% if forloop.first %}inline{% else %}none{% endif %};">{{ block.settings.text }}</span>
+      {% endfor %}
+    {% else %}
+      <span class="announcement-bar__text">{{ section.settings.announcement_text }}</span>
+    {% endif %}
   </div>
 </section>
+<script>
+(function() {
+  var interval = {{ section.settings.message_interval | default: 5 }} * 1000;
+  var messages = document.querySelectorAll('.announcement-bar__text[data-announcement-index]');
+  if (messages.length < 2) return;
+  var current = 0;
+  setInterval(function() {
+    messages[current].style.display = 'none';
+    current = (current + 1) % messages.length;
+    messages[current].style.display = 'inline';
+  }, interval);
+})();
+</script>
 
 {% stylesheet %}
 .announcement-bar-section {
@@ -43,7 +63,7 @@
     {
       "type": "text",
       "id": "announcement_text",
-      "label": "Announcement text",
+      "label": "Announcement text (deprecated)",
       "default": "🚀 Welcome to our store! Enjoy free shipping on all orders! 🚀"
     },
     {
@@ -63,11 +83,39 @@
       "max": 60,
       "step": 2,
       "default": 12
+    },
+    {
+      "type": "number",
+      "id": "message_interval",
+      "label": "Message change interval (seconds)",
+      "min": 2,
+      "max": 30,
+      "step": 1,
+      "default": 5
     }
   ],
+  "blocks": [
+    {
+      "type": "message",
+      "name": "Message",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Message text",
+          "default": "New message"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 10,
   "presets": [
     {
-      "name": "Announcement bar"
+      "name": "Announcement bar",
+      "blocks": [
+        { "type": "message", "settings": { "text": "🚀 Welcome to our store! Enjoy free shipping on all orders! 🚀" } },
+        { "type": "message", "settings": { "text": "🎉 Summer Sale! Up to 50% off selected items! 🎉" } }
+      ]
     }
   ]
 }
