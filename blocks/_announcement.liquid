@@ -1,3 +1,5 @@
+
+
 {% assign plain_text = block.settings.text | strip_newlines | strip_html | strip %}
 {%- assign block_index = section.blocks | find_index: 'id', block.id -%}
 
@@ -119,19 +121,6 @@
   .text-block--align-right,
   .text-block--align-right > * {
     margin-inline-start: auto;
-  }
-
-  .announcement-bar__slide {
-    animation: fadeInOut 6s infinite;
-  }
-
-  @keyframes fadeInOut {
-    0%, 100% {
-      opacity: 0;
-    }
-    50% {
-      opacity: 1;
-    }
   }
 {% endstylesheet %}
 

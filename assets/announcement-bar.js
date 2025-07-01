@@ -28,10 +28,6 @@ export class AnnouncementBar extends Component {
     this.addEventListener('mouseleave', this.resume);
     document.addEventListener('visibilitychange', this.#handleVisibilityChange);
 
-    this.refs.slides?.forEach((slide, index) => {
-      slide.style.animationDelay = `${index * 6}s`;
-    });
-
     this.play();
   }
 
