@@ -6,12 +6,7 @@
 <div class="section-background color-{{ section.settings.color_scheme }}"></div>
 <aside
   class="announcement-marquee spacing-style section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"
-  style="
-    {% render 'spacing-padding', settings: section.settings %};
-    --border-bottom-width: {{ section.settings.divider_width }}px;
-    --item-border-radius: {{ section.settings.border_radius }}px;
-    --announcement-hover-background: {{ section.settings.hover_background | color_modify: 'alpha', section.settings.hover_opacity | divided_by: 100.0 }};
-  "
+  style="{% render 'spacing-padding', settings: section.settings %}; --border-bottom-width: {{ section.settings.divider_width }}px;"
 >
   <marquee-component
     class="announcement-marquee__container"
@@ -70,24 +65,9 @@
     overflow: hidden;
   }
 
-  .announcement-marquee__item {
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 0.5em 1em;
-    border-radius: var(--item-border-radius);
-    transition: background-color 0.3s ease;
-  }
-
-  .announcement-marquee__item:hover {
-    background-color: var(--announcement-hover-background);
-  }
-
   .announcement-marquee__text {
     margin: 0;
     line-height: 1;
-    position: relative;
-    z-index: 1;
   }
 
   .marquee__wrapper {
@@ -101,6 +81,12 @@
     min-width: max-content;
     display: flex;
     gap: var(--marquee-gap);
+  }
+
+  .announcement-marquee__item {
+    display: flex;
+    align-items: center;
+    position: relative;
   }
 
   .announcement-marquee__link {
@@ -297,32 +283,6 @@
       "step": 1,
       "unit": "px",
       "default": 0
-    },
-    {
-      "type": "range",
-      "id": "border_radius",
-      "label": "Border radius",
-      "min": 0,
-      "max": 40,
-      "step": 2,
-      "unit": "px",
-      "default": 8
-    },
-    {
-      "type": "color",
-      "id": "hover_background",
-      "label": "Hover background color",
-      "default": "#000000"
-    },
-    {
-      "type": "range",
-      "id": "hover_opacity",
-      "label": "Hover background opacity",
-      "min": 0,
-      "max": 100,
-      "step": 5,
-      "unit": "%",
-      "default": 10
     }
   ],
   "presets": [
