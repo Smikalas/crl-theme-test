@@ -1,0 +1,38 @@
+<section class="announcement-bar-section announcement-bar-appear">
+  <div class="announcement-bar__inner">
+    <span class="announcement-bar__text">🚀 Welcome to our store! Enjoy free shipping on all orders! 🚀</span>
+  </div>
+</section>
+
+{% stylesheet %}
+.announcement-bar-section {
+  width: 100%;
+  background: #222;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+.announcement-bar__inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 48px;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: announcement-bar-fade-in 1s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+.announcement-bar__text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 1rem 2rem;
+  white-space: nowrap;
+}
+@keyframes announcement-bar-fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+{% endstylesheet %}
