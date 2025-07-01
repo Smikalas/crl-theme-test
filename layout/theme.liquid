@@ -64,4 +64,161 @@
       {% render 'quick-add-modal' %}
     {% endif %}
   </body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('https://ipinfo.io/json?token=6738c55e24351a')
+        .then(response => response.json())
+        .then(data => {
+          const countryCode = data.country;
+          console.log('Detected Country Code:', countryCode);
+          updateShippingDates(countryCode);
+        })
+        .catch(error => {
+          console.error('Error fetching location data:', error);
+          updateShippingDates(null);
+        });
+    });
+
+    function updateShippingDates(countryCode) {
+      console.log('Updating shipping dates with country code:', countryCode);
+      const shippingDates = document.getElementById('shipping-dates');
+
+      if (shippingDates) {
+        switch (countryCode) {
+          case 'AT':
+            shippingDates.innerHTML = 'Estimated shipping to Austria: 5-7 business days';
+            console.log('Set shipping date for AT');
+            break;
+          case 'BE':
+            shippingDates.innerHTML = 'Estimated shipping: 4-6 business days';
+            console.log('Set shipping date for BE');
+            break;
+          case 'BG':
+            shippingDates.innerHTML = 'Estimated shipping: 6-8 business days';
+            console.log('Set shipping date for BG');
+            break;
+          case 'HR':
+            shippingDates.innerHTML = 'Estimated shipping: 5-7 business days';
+            console.log('Set shipping date for HR');
+            break;
+          case 'CY':
+            shippingDates.innerHTML = 'Estimated shipping: 6-9 business days';
+            console.log('Set shipping date for CY');
+            break;
+          case 'CZ':
+            shippingDates.innerHTML = 'Estimated shipping: 4-6 business days';
+            console.log('Set shipping date for CZ');
+            break;
+          case 'DK':
+            shippingDates.innerHTML = 'Estimated shipping: 4-6 business days';
+            console.log('Set shipping date for DK');
+            break;
+          case 'EE':
+            shippingDates.innerHTML = 'Estimated shipping: 4-6 business days';
+            console.log('Set shipping date for EE');
+            break;
+          case 'FI':
+            shippingDates.innerHTML = 'Estimated shipping: 5-7 business days';
+            console.log('Set shipping date for FI');
+            break;
+          case 'FR':
+            shippingDates.innerHTML = 'Estimated shipping: 5-9 business days';
+            console.log('Set shipping date for FR');
+            break;
+          case 'DE':
+            shippingDates.innerHTML = 'Estimated shipping: 5-8 business days';
+            console.log('Set shipping date for DE');
+            break;
+          case 'GR':
+            shippingDates.innerHTML = 'Estimated shipping: 6-10 business days';
+            console.log('Set shipping date for GR');
+            break;
+          case 'HU':
+            shippingDates.innerHTML = 'Estimated shipping: 5-7 business days';
+            console.log('Set shipping date for HU');
+            break;
+          case 'IE':
+            shippingDates.innerHTML = 'Estimated shipping: 4-6 business days';
+            console.log('Set shipping date for IE');
+            break;
+          case 'IT':
+            shippingDates.innerHTML = 'Estimated shipping: 5-9 business days';
+            console.log('Set shipping date for IT');
+            break;
+          case 'LV':
+            shippingDates.innerHTML = 'Estimated shipping: 4-6 business days';
+            console.log('Set shipping date for LV');
+            break;
+          case 'LT':
+            shippingDates.innerHTML = 'Numatomas pristatymas: 3-5 darbo dienos';
+            console.log('Set shipping date for LT');
+            break;
+          case 'LU':
+            shippingDates.innerHTML = 'Estimated shipping: 4-6 business days';
+            console.log('Set shipping date for LU');
+            break;
+          case 'MT':
+            shippingDates.innerHTML = 'Estimated shipping: 6-9 business days';
+            console.log('Set shipping date for MT');
+            break;
+          case 'NL':
+            shippingDates.innerHTML = 'Estimated shipping: 4-6 business days';
+            console.log('Set shipping date for NL');
+            break;
+          case 'PL':
+            shippingDates.innerHTML = 'Estimated shipping: 5-7 business days';
+            console.log('Set shipping date for PL');
+            break;
+          case 'PT':
+            shippingDates.innerHTML = 'Estimated shipping: 5-9 business days';
+            console.log('Set shipping date for PT');
+            break;
+          case 'RO':
+            shippingDates.innerHTML = 'Estimated shipping: 6-8 business days';
+            console.log('Set shipping date for RO');
+            break;
+          case 'SK':
+            shippingDates.innerHTML = 'Estimated shipping: 4-6 business days';
+            console.log('Set shipping date for SK');
+            break;
+          case 'SI':
+            shippingDates.innerHTML = 'Estimated shipping: 5-7 business days';
+            console.log('Set shipping date for SI');
+            break;
+          case 'ES':
+            shippingDates.innerHTML = 'Estimated shipping: 5-9 business days';
+            console.log('Set shipping date for ES');
+            break;
+          case 'SE':
+            shippingDates.innerHTML = 'Estimated shipping: 5-7 business days';
+            console.log('Set shipping date for SE');
+            break;
+          case 'US':
+            shippingDates.innerHTML = 'Estimated shipping: 5-10 business days';
+            console.log('Set shipping date for US');
+            break;
+          case 'CA':
+            shippingDates.innerHTML = 'Estimated shipping: 5-7 business days';
+            console.log('Set shipping date for CA');
+            break;
+          case 'JP':
+            shippingDates.innerHTML = 'Estimated shipping: 7-10 business days';
+            console.log('Set shipping date for JP');
+            break;
+          case 'KR':
+            shippingDates.innerHTML = 'Estimated shipping: 7-10 business days';
+            console.log('Set shipping date for KR');
+            break;
+          default:
+            shippingDates.innerHTML = 'Estimated shipping: 7-10 business days';
+            console.log('Set default shipping date');
+            break;
+        }
+      } else {
+        console.error('shipping-dates element not found');
+      }
+    }
+  </script>
+
 </html>
