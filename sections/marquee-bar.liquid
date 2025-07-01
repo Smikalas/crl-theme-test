@@ -1,6 +1,311 @@
-{% schema %}
-  {
-    "name": "Section name",
-    "settings": []
+<script
+  src="{{ 'marquee.js' | asset_url }}"
+  type="module"
+></script>
+
+<div class="section-background color-{{ section.settings.color_scheme }}"></div>
+<aside
+  class="announcement-marquee spacing-style section section--{{ section.settings.section_width }} color-{{ section.settings.color_scheme }}"
+  style="{% render 'spacing-padding', settings: section.settings %}; --border-bottom-width: {{ section.settings.divider_width }}px;"
+>
+  <marquee-component
+    class="announcement-marquee__container"
+    style="
+      {% render 'gap-style', value: section.settings.gap_between_elements, name: 'marquee-gap' %}
+      --marquee-direction: {{ section.settings.movement_direction }};
+    "
+    data-speed-factor="{{ section.settings.speed }}"
+    data-movement-direction="{{ section.settings.movement_direction }}"
+  >
+    <div class="marquee__wrapper" ref="wrapper">
+      <div class="marquee__content" ref="content">
+        <div class="marquee__repeated-items">
+          {% for block in section.blocks %}
+            {%- assign plain_text = block.settings.text | strip_newlines | strip_html | strip -%}
+            {%- unless plain_text == '' -%}
+              <div 
+                class="announcement-marquee__item {% if block.settings.text_style %}{{ block.settings.text_style }}{% endif %}"
+                {{ block.shopify_attributes }}
+              >
+                <p class="announcement-marquee__text">
+                  {{ block.settings.text }}
+                </p>
+                {% if block.settings.link != blank %}
+                  <a
+                    class="announcement-marquee__link"
+                    href="{{ block.settings.link }}"
+                  >
+                    <span class="visually-hidden">
+                      {{ block.settings.text | strip_html }}
+                    </span>
+                  </a>
+                {% endif %}
+              </div>
+            {%- endunless -%}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </marquee-component>
+</aside>
+
+{% stylesheet %}
+  .announcement-marquee {
+    position: relative;
+    border-block-end: var(--border-bottom-width) solid var(--color-border);
+    padding: var(--padding-block-start) var(--padding-inline-start);
   }
+
+  .announcement-marquee__container {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .announcement-marquee__text {
+    margin: 0;
+    line-height: 1;
+  }
+
+  .marquee__wrapper {
+    display: flex;
+    gap: var(--marquee-gap);
+    width: fit-content;
+    white-space: nowrap;
+  }
+
+  .marquee__content {
+    min-width: max-content;
+    display: flex;
+    gap: var(--marquee-gap);
+  }
+
+  .announcement-marquee__item {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  .announcement-marquee__link {
+    position: absolute;
+    inset: 0;
+  }
+
+  .marquee__content :is(p, h1, h2, h3, h4, h5, h6) {
+    white-space: nowrap;
+  }
+
+  .marquee__content .marquee__repeated-items * {
+    max-width: none;
+  }
+
+  .marquee__repeated-items {
+    min-width: max-content;
+    display: flex;
+    gap: var(--marquee-gap);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .marquee__repeated-items > * {
+    align-content: center;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .announcement-marquee__container:not([data-disabled]) .marquee__wrapper {
+      animation: marquee-motion var(--marquee-speed) linear infinite var(--marquee-direction);
+    }
+  }
+
+  @keyframes marquee-motion {
+    to {
+      transform: translate3d(calc(-50% - (var(--marquee-gap) / 2)), 0, 0);
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Marquee Announcement Bar",
+  "enabled_on": {
+    "groups": ["header"]
+  },
+  "blocks": [
+    {
+      "name": "Announcement",
+      "type": "announcement",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Welcome to our store"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "label": "Text style",
+          "options": [
+            {
+              "value": "body",
+              "label": "Regular"
+            },
+            {
+              "value": "subtitle",
+              "label": "Subtitle"
+            },
+            {
+              "value": "uppercase",
+              "label": "Uppercase"
+            }
+          ],
+          "default": "body"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "select",
+      "id": "section_width",
+      "label": "Width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "Page width"
+        },
+        {
+          "value": "full-width",
+          "label": "Full width"
+        }
+      ],
+      "default": "full-width"
+    },
+    {
+      "type": "select",
+      "id": "movement_direction",
+      "label": "Movement direction",
+      "options": [
+        {
+          "value": "reverse",
+          "label": "Forward"
+        },
+        {
+          "value": "normal",
+          "label": "Reverse"
+        }
+      ],
+      "default": "normal"
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "label": "Speed",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "gap_between_elements",
+      "label": "Gap between announcements",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "default": 24
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color scheme",
+      "default": "scheme-1"
+    },
+    {
+      "type": "range",
+      "id": "divider_width",
+      "label": "Bottom border thickness",
+      "min": 0,
+      "max": 5,
+      "step": 0.5,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "Left padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "Right padding",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Marquee Announcement",
+      "blocks": [
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store"
+          }
+        },
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "Free shipping on orders over $50"
+          }
+        },
+        {
+          "type": "announcement",
+          "settings": {
+            "text": "Sign up for our newsletter"
+          }
+        }
+      ]
+    }
+  ]
+}
 {% endschema %}
