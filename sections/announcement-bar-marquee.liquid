@@ -8,12 +8,13 @@
       color: {{ section.settings.text_color }};
       padding-top: {{ section.settings.padding_top | default: 12 }}px;
       padding-bottom: {{ section.settings.padding_bottom | default: 12 }}px;
-      --marquee-animation: {{ section.settings.movement_direction == 'normal' ? 'marquee-motion-normal' : 'marquee-motion-reverse' }};
+      --marquee-direction: {{ section.settings.movement_direction }};
     "
     data-speed-factor="{{ section.settings.speed_factor | default: 20 }}"
-    data-speed-factor="{{ section.settings.speed_factor | default: 20 }}"
+    data-movement-direction="{{ section.settings.movement_direction }}"
   >
-      <div class="marquee__content">
+    <div class="marquee__wrapper" ref="wrapper">
+      <div class="marquee__content" ref="content">
         <div class="marquee__repeated-items">
           {% for block in section.blocks %}
             {% if block.type == 'message' %}
@@ -29,11 +30,10 @@
   </marquee-component>
 </section>
 
+{% stylesheet %}
 .announcement-bar-marquee-section {
   width: 100%;
   overflow: hidden;
-  --marquee-gap: 3rem;
-}
 }
 
 .announcement-bar-marquee {
@@ -41,9 +41,10 @@
   width: 100%;
   overflow: hidden;
 }
+
 .marquee__wrapper {
   display: flex;
-  gap: var(--marquee-gap);
+  gap: var(--marquee-gap, 3rem);
   width: fit-content;
   white-space: nowrap;
 }
@@ -51,16 +52,15 @@
 .marquee__content {
   min-width: max-content;
   display: flex;
-  gap: var(--marquee-gap);
+  gap: var(--marquee-gap, 3rem);
 }
 
 .marquee__repeated-items {
   min-width: max-content;
   display: flex;
-  gap: var(--marquee-gap);
+  gap: var(--marquee-gap, 3rem);
   align-items: center;
   justify-content: center;
-}
 }
 
 .announcement-bar__message {
@@ -72,25 +72,13 @@
 
 @media (prefers-reduced-motion: no-preference) {
   marquee-component:not([data-disabled]) .marquee__wrapper {
-    animation: var(--marquee-animation, marquee-motion-reverse) var(--marquee-speed, 20s) linear infinite;
+    animation: marquee-motion var(--marquee-speed, 20s) linear infinite var(--marquee-direction);
   }
 }
 
-@keyframes marquee-motion-reverse {
-  to {
-    transform: translate3d(-50%, 0, 0);
-  }
-}
-
-@keyframes marquee-motion-normal {
-  to {
-    transform: translate3d(50%, 0, 0);
-  }
-}
-}
 @keyframes marquee-motion {
   to {
-    transform: translate3d(-50%, 0, 0);
+    transform: translate3d(calc(-50% - (var(--marquee-gap, 3rem) / 2)), 0, 0);
   }
 }
 {% endstylesheet %}
