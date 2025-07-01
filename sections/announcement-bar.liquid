@@ -1,10 +1,13 @@
 <section class="announcement-bar-section announcement-bar-appear" style="padding-top: {{ section.settings.padding_top | default: 12 }}px; padding-bottom: {{ section.settings.padding_bottom | default: 12 }}px;">
   <div class="announcement-bar__inner">
-    {% assign messages = section.blocks | where: 'type', 'message' %}
-    {% if section.blocks.size > 0 %}
+    {% assign message_blocks = section.blocks | map: 'type' | join: ',' %}
+    {% assign has_message_blocks = message_blocks contains 'message' %}
+    {% if has_message_blocks %}
+      {% assign message_index = 0 %}
       {% for block in section.blocks %}
         {% if block.type == 'message' %}
-          <span class="announcement-bar__text" data-announcement-index="{{ forloop.index0 }}" style="display: {% if forloop.first %}inline{% else %}none{% endif %};">{{ block.settings.text }}</span>
+          <span class="announcement-bar__text" data-announcement-index="{{ message_index }}" style="display: {% if message_index == 0 %}inline{% else %}none{% endif %};">{{ block.settings.text }}</span>
+          {% assign message_index = message_index | plus: 1 %}
         {% endif %}
       {% endfor %}
     {% else %}
