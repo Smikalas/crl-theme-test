@@ -459,10 +459,6 @@
               },
               "block_order": []
             },
-            "judge_me_reviews_preview_badge_YUXRGd": {
-              "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
-              "settings": {}
-            },
             "divider": {
               "type": "_divider",
               "settings": {
@@ -480,7 +476,6 @@
             "variant_picker_gyUmGT",
             "group_VyADhB",
             "buy_buttons",
-            "judge_me_reviews_preview_badge_YUXRGd",
             "divider"
           ]
         }
