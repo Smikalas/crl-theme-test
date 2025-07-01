@@ -49,7 +49,7 @@
         "section_width": "full-width",
         "movement_direction": "reverse",
         "speed": 10,
-        "gap_between_elements": 76,
+        "gap_between_elements": 100,
         "color_scheme": "scheme-5",
         "divider_width": 2.5,
         "padding-block-start": 8,
