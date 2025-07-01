@@ -15,9 +15,9 @@
       "type": "announcement-bar",
       "name": "Announcement bar",
       "settings": {
-        "announcement_text": "",
-        "padding_top": 0,
-        "padding_bottom": 0
+        "announcement_text": "Welcome",
+        "padding_top": 4,
+        "padding_bottom": 4
       }
     },
     "header_section": {
