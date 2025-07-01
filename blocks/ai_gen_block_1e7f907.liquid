@@ -1,0 +1,487 @@
+{% doc %}
+  @prompt
+    Generate a button that animates
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-animated-button-{{ ai_gen_id }} {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: {{ block.settings.padding_vertical }}px {{ block.settings.padding_horizontal }}px;
+    background-color: {{ block.settings.button_color }};
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.font_size }}px;
+    font-weight: {{ block.settings.font_weight }};
+    text-decoration: none;
+    border: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-width: {{ block.settings.min_width }}px;
+    max-width: 100%;
+    margin: {{ block.settings.margin }}px auto;
+  }
+
+  .ai-animated-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+    color: {{ block.settings.text_hover_color }};
+    border-color: {{ block.settings.border_hover_color }};
+  }
+
+  {% if block.settings.animation_type == 'pulse' %}
+    .ai-animated-button-{{ ai_gen_id }}:hover {
+      animation: pulse-{{ ai_gen_id }} 1s;
+      box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+    }
+
+    @keyframes pulse-{{ ai_gen_id }} {
+      0% {
+        box-shadow: 0 0 0 0 {{ block.settings.animation_color }};
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+      }
+    }
+  {% elsif block.settings.animation_type == 'ripple' %}
+    .ai-animated-button-{{ ai_gen_id }} {
+      position: relative;
+      z-index: 1;
+    }
+
+    .ai-animated-button-{{ ai_gen_id }}::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0;
+      height: 0;
+      background-color: {{ block.settings.animation_color }};
+      opacity: 0.3;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease-out, height 0.6s ease-out, opacity 0.6s ease-out;
+      z-index: -1;
+    }
+
+    .ai-animated-button-{{ ai_gen_id }}:hover::after {
+      width: 300px;
+      height: 300px;
+      opacity: 0;
+    }
+  {% elsif block.settings.animation_type == 'slide' %}
+    .ai-animated-button-{{ ai_gen_id }} {
+      position: relative;
+      z-index: 1;
+    }
+
+    .ai-animated-button-{{ ai_gen_id }}::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: {{ block.settings.animation_color }};
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease-out;
+    }
+
+    .ai-animated-button-{{ ai_gen_id }}:hover::after {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+  {% elsif block.settings.animation_type == 'glow' %}
+    .ai-animated-button-{{ ai_gen_id }}:hover {
+      box-shadow: 0 0 10px {{ block.settings.animation_color }};
+    }
+  {% elsif block.settings.animation_type == 'bounce' %}
+    .ai-animated-button-{{ ai_gen_id }}:hover {
+      animation: bounce-{{ ai_gen_id }} 0.6s;
+    }
+
+    @keyframes bounce-{{ ai_gen_id }} {
+      0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+      }
+      40% {
+        transform: translateY(-10px);
+      }
+      60% {
+        transform: translateY(-5px);
+      }
+    }
+  {% endif %}
+
+  .ai-animated-button-icon-{{ ai_gen_id }} {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: {{ block.settings.icon_spacing }}px;
+    transition: transform 0.3s ease;
+  }
+
+  {% if block.settings.icon_animation == 'slide' %}
+    .ai-animated-button-{{ ai_gen_id }}:hover .ai-animated-button-icon-{{ ai_gen_id }} {
+      transform: translateX(5px);
+    }
+  {% elsif block.settings.icon_animation == 'rotate' %}
+    .ai-animated-button-{{ ai_gen_id }}:hover .ai-animated-button-icon-{{ ai_gen_id }} {
+      transform: rotate(360deg);
+    }
+  {% elsif block.settings.icon_animation == 'pulse' %}
+    .ai-animated-button-{{ ai_gen_id }}:hover .ai-animated-button-icon-{{ ai_gen_id }} {
+      animation: icon-pulse-{{ ai_gen_id }} 0.6s ease infinite alternate;
+    }
+
+    @keyframes icon-pulse-{{ ai_gen_id }} {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.2);
+      }
+    }
+  {% endif %}
+
+  @media screen and (max-width: 749px) {
+    .ai-animated-button-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size | times: 0.9 }}px;
+      padding: {{ block.settings.padding_vertical | times: 0.9 }}px {{ block.settings.padding_horizontal | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<a 
+  href="{{ block.settings.button_link }}" 
+  class="ai-animated-button-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+  {% if block.settings.open_in_new_tab %}target="_blank" rel="noopener"{% endif %}
+  {% if block.settings.button_aria_label != blank %}aria-label="{{ block.settings.button_aria_label }}"{% endif %}
+>
+  {% if block.settings.show_icon %}
+    <span class="ai-animated-button-icon-{{ ai_gen_id }}">
+      <svg width="{{ block.settings.icon_size }}" height="{{ block.settings.icon_size }}" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        {% case block.settings.icon_type %}
+          {% when 'arrow' %}
+            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          {% when 'cart' %}
+            <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          {% when 'star' %}
+            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          {% when 'heart' %}
+            <path d="M20.84 4.61C20.3292 4.099 19.7228 3.69364 19.0554 3.41708C18.3879 3.14052 17.6725 2.99817 16.95 2.99817C16.2275 2.99817 15.5121 3.14052 14.8446 3.41708C14.1772 3.69364 13.5708 4.099 13.06 4.61L12 5.67L10.94 4.61C9.9083 3.57831 8.50903 2.99871 7.05 2.99871C5.59096 2.99871 4.19169 3.57831 3.16 4.61C2.1283 5.64169 1.54871 7.04097 1.54871 8.5C1.54871 9.95903 2.1283 11.3583 3.16 12.39L4.22 13.45L12 21.23L19.78 13.45L20.84 12.39C21.351 11.8792 21.7563 11.2728 22.0329 10.6054C22.3095 9.93789 22.4518 9.22248 22.4518 8.5C22.4518 7.77752 22.3095 7.0621 22.0329 6.39464C21.7563 5.72718 21.351 5.12075 20.84 4.61Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        {% endcase %}
+      </svg>
+    </span>
+  {% endif %}
+  {{ block.settings.button_text }}
+</a>
+
+{% schema %}
+{
+  "name": "Animated Button",
+  "tag": null,
+  "class": "animated-button-block",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Button Content"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "text",
+      "id": "button_aria_label",
+      "label": "Button ARIA label",
+      "info": "Describe the purpose of the button for screen readers"
+    },
+    {
+      "type": "checkbox",
+      "id": "open_in_new_tab",
+      "label": "Open in new tab",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Button Style"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button hover color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_hover_color",
+      "label": "Text hover color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Regular"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semibold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "range",
+      "id": "padding_vertical",
+      "min": 5,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "border_hover_color",
+      "label": "Border hover color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "min_width",
+      "min": 100,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Minimum width",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "margin",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Margin",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "select",
+      "id": "animation_type",
+      "label": "Animation type",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "pulse",
+          "label": "Pulse"
+        },
+        {
+          "value": "ripple",
+          "label": "Ripple"
+        },
+        {
+          "value": "slide",
+          "label": "Slide"
+        },
+        {
+          "value": "glow",
+          "label": "Glow"
+        },
+        {
+          "value": "bounce",
+          "label": "Bounce"
+        }
+      ],
+      "default": "pulse"
+    },
+    {
+      "type": "color",
+      "id": "animation_color",
+      "label": "Animation color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Icon"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icon",
+      "label": "Show icon",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "icon_type",
+      "label": "Icon type",
+      "options": [
+        {
+          "value": "arrow",
+          "label": "Arrow"
+        },
+        {
+          "value": "cart",
+          "label": "Cart"
+        },
+        {
+          "value": "star",
+          "label": "Star"
+        },
+        {
+          "value": "heart",
+          "label": "Heart"
+        }
+      ],
+      "default": "arrow"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon size",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "icon_spacing",
+      "min": 5,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Space after icon",
+      "default": 8
+    },
+    {
+      "type": "select",
+      "id": "icon_animation",
+      "label": "Icon animation",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "slide",
+          "label": "Slide"
+        },
+        {
+          "value": "rotate",
+          "label": "Rotate"
+        },
+        {
+          "value": "pulse",
+          "label": "Pulse"
+        }
+      ],
+      "default": "slide"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Animated Button"
+    }
+  ]
+}
+{% endschema %}

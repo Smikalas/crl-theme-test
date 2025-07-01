@@ -1,0 +1,198 @@
+.b-dics {
+	width: 100%;
+	max-width: 100%;
+	position: relative;
+	overflow: hidden;
+	display: flex;
+	opacity: 0;
+}
+
+.b-dics__text {
+	display: none !important;
+}
+
+.b-dics__section {
+	height: 100%;
+}
+
+.b-dics__slider:hover :before {
+	color: #ffffff;
+	border-color: #ffffff;
+}
+
+.b-dics__text {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	padding: 5px 25px;
+	transform: translateX(-50%);
+	background: #ffffff;
+	z-index: 11;
+	font-family: Arial, serif;
+	color: #3d3d3d;
+	user-select: none;
+	font-size: 13px;
+	text-align: center;
+	margin: 16px 0;
+	white-space: nowrap;
+	opacity: 0.7;
+	pointer-events: none;
+}
+
+.b-dics__image-container {
+	width: 100%;
+	height: 100%;
+	display: block;
+	overflow: hidden;
+	position: relative;
+}
+
+.b-dics__image {
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	user-select: none;
+	max-width: none;
+	width: auto;
+}
+
+.b-dics__slider {
+	display: unset !important;
+	color: #ffffff;
+	position: absolute;
+	left: 100%;
+	top: 0;
+	cursor: pointer;
+	transform: translateX(-50%);
+	height: 100%;
+	width: 3px;
+	padding: 0 30px;
+	z-index: 1;
+	touch-action: none;
+	line-height: normal;
+	opacity: 1;
+}
+
+.b-dics__slider:before {
+	content: '';
+	background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTgiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAxOCAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTYuNzA5OTQgMC4zODY2MTlDNi42MTY5OCAwLjI5Mjg5IDYuNTA2MzcgMC4yMTg0OTYgNi4zODQ1MiAwLjE2NzcyN0M2LjI2MjY2IDAuMTE2OTU5IDYuMTMxOTUgMC4wOTA4MjAzIDUuOTk5OTQgMC4wOTA4MjAzQzUuODY3OTMgMC4wOTA4MjAzIDUuNzM3MjIgMC4xMTY5NTkgNS42MTUzNiAwLjE2NzcyN0M1LjQ5MzUgMC4yMTg0OTYgNS4zODI5IDAuMjkyODkgNS4yODk5NCAwLjM4NjYxOUwwLjI4OTkzOSA1LjM4NjYyQzAuMTk2MjExIDUuNDc5NTggMC4xMjE4MTYgNS41OTAxOCAwLjA3MTA0NzUgNS43MTIwNEMwLjAyMDI3ODkgNS44MzM5IC0wLjAwNTg1OTM4IDUuOTY0NjEgLTAuMDA1ODU5MzggNi4wOTY2MkMtMC4wMDU4NTkzOCA2LjIyODYzIDAuMDIwMjc4OSA2LjM1OTM0IDAuMDcxMDQ3NSA2LjQ4MTJDMC4xMjE4MTYgNi42MDMwNSAwLjE5NjIxMSA2LjcxMzY2IDAuMjg5OTM5IDYuODA2NjJMNS4yODk5NCAxMS44MDY2QzUuMzgyOSAxMS45MDAzIDUuNDkzNSAxMS45NzQ3IDUuNjE1MzYgMTIuMDI1NUM1LjczNzIyIDEyLjA3NjMgNS44Njc5MyAxMi4xMDI0IDUuOTk5OTQgMTIuMTAyNEM2LjEzMTk1IDEyLjEwMjQgNi4yNjI2NiAxMi4wNzYzIDYuMzg0NTIgMTIuMDI1NUM2LjUwNjM3IDExLjk3NDcgNi42MTY5OCAxMS45MDAzIDYuNzA5OTQgMTEuODA2NkM2LjgwMzY3IDExLjcxMzcgNi44NzgwNiAxMS42MDMxIDYuOTI4ODMgMTEuNDgxMkM2Ljk3OTYgMTEuMzU5MyA3LjAwNTc0IDExLjIyODYgNy4wMDU3NCAxMS4wOTY2QzcuMDA1NzQgMTAuOTY0NiA2Ljk3OTYgMTAuODMzOSA2LjkyODgzIDEwLjcxMkM2Ljg3ODA2IDEwLjU5MDIgNi44MDM2NyAxMC40Nzk2IDYuNzA5OTQgMTAuMzg2NkwyLjQwOTk0IDYuMDk2NjJMNi43MDk5NCAxLjgwNjYyQzYuODAzNjcgMS43MTM2NiA2Ljg3ODA2IDEuNjAzMDUgNi45Mjg4MyAxLjQ4MTJDNi45Nzk2IDEuMzU5MzQgNy4wMDU3NCAxLjIyODYzIDcuMDA1NzQgMS4wOTY2MkM3LjAwNTc0IDAuOTY0NjA3IDYuOTc5NiAwLjgzMzkwMSA2LjkyODgzIDAuNzEyMDQyQzYuODc4MDYgMC41OTAxODMgNi44MDM2NyAwLjQ3OTU4MiA2LjcwOTk0IDAuMzg2NjE5Wk0xNy43MDk5IDUuMzg2NjJMMTIuNzA5OSAwLjM4NjYxOUMxMi42MTY3IDAuMjkzMzggMTIuNTA2IDAuMjE5NDE5IDEyLjM4NDIgMC4xNjg5NTlDMTIuMjYyNCAwLjExODQ5OSAxMi4xMzE4IDAuMDkyNTI2OSAxMS45OTk5IDAuMDkyNTI2OUMxMS43MzM2IDAuMDkyNTI2OSAxMS40NzgyIDAuMTk4MzE1IDExLjI4OTkgMC4zODY2MTlDMTEuMTk2NyAwLjQ3OTg1NyAxMS4xMjI3IDAuNTkwNTQ3IDExLjA3MjMgMC43MTIzNjlDMTEuMDIxOCAwLjgzNDE5MSAxMC45OTU4IDAuOTY0NzU5IDEwLjk5NTggMS4wOTY2MkMxMC45OTU4IDEuMzYyOTIgMTEuMTAxNiAxLjYxODMxIDExLjI4OTkgMS44MDY2MkwxNS41ODk5IDYuMDk2NjJMMTEuMjg5OSAxMC4zODY2QzExLjE5NjIgMTAuNDc5NiAxMS4xMjE4IDEwLjU5MDIgMTEuMDcxIDEwLjcxMkMxMS4wMjAzIDEwLjgzMzkgMTAuOTk0MSAxMC45NjQ2IDEwLjk5NDEgMTEuMDk2NkMxMC45OTQxIDExLjIyODYgMTEuMDIwMyAxMS4zNTkzIDExLjA3MSAxMS40ODEyQzExLjEyMTggMTEuNjAzMSAxMS4xOTYyIDExLjcxMzcgMTEuMjg5OSAxMS44MDY2QzExLjM4MjkgMTEuOTAwMyAxMS40OTM1IDExLjk3NDcgMTEuNjE1NCAxMi4wMjU1QzExLjczNzIgMTIuMDc2MyAxMS44Njc5IDEyLjEwMjQgMTEuOTk5OSAxMi4xMDI0QzEyLjEzMiAxMi4xMDI0IDEyLjI2MjcgMTIuMDc2MyAxMi4zODQ1IDEyLjAyNTVDMTIuNTA2NCAxMS45NzQ3IDEyLjYxNyAxMS45MDAzIDEyLjcwOTkgMTEuODA2NkwxNy43MDk5IDYuODA2NjJDMTcuODAzNyA2LjcxMzY2IDE3Ljg3ODEgNi42MDMwNSAxNy45Mjg4IDYuNDgxMkMxNy45Nzk2IDYuMzU5MzQgMTguMDA1NyA2LjIyODYzIDE4LjAwNTcgNi4wOTY2MkMxOC4wMDU3IDUuOTY0NjEgMTcuOTc5NiA1LjgzMzkgMTcuOTI4OCA1LjcxMjA0QzE3Ljg3ODEgNS41OTAxOCAxNy44MDM3IDUuNDc5NTggMTcuNzA5OSA1LjM4NjYyWiIgZmlsbD0iIzQ4NUE0RiIvPgo8L3N2Zz4K);
+	background-color: #fff;
+	background-position: center center;
+	background-repeat: no-repeat;
+	width: 4.8rem;
+	height: 4.8rem;
+	padding: 0;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 2;
+	font-size: 0;
+	transition: 0.15s;
+}
+
+.b-dics__slider:after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	top: 0;
+	transform: translateX(-50%);
+	height: 100%;
+	width: 2px;
+	background-color: #fff;
+	z-index: 1;
+}
+
+.b-dics__image-container:hover .b-dics__text {
+	opacity: 1;
+}
+
+.b-dics__slider:hover {
+	opacity: 1;
+}
+
+/* Text Position
+   ****************************************************************************/
+
+.b-dics--tp-center .b-dics__text {
+	top: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+}
+
+.b-dics--tp-bottom .b-dics__text {
+	top: initial;
+	bottom: 0;
+	transform: translate(-50%, -50%);
+}
+
+.b-dics--tp-left .b-dics__text {
+	left: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	margin: 0 16px;
+}
+
+.b-dics--tp-right .b-dics__text {
+	left: initial;
+	right: 0;
+	top: 50%;
+	transform: translateY(-50%);
+	margin: 0 16px;
+}
+
+/* Hide texts
+   ****************************************************************************/
+
+.b-dics--hide-texts .b-dics__text {
+	background: #ffffff;
+	opacity: 0;
+}
+
+.b-dics--hide-texts .b-dics__image-container:hover .b-dics__text {
+	opacity: 1;
+}
+
+/* Vertical Sliders
+   ****************************************************************************/
+
+.b-dics--vertical {
+	flex-direction: column;
+}
+
+.b-dics--vertical .b-dics__section {
+	height: auto;
+	width: 100%;
+}
+
+.b-dics--vertical .b-dics__image {
+	left: 50%;
+	transform: translateX(-50%);
+	top: 0;
+	width: 100%;
+	height: auto;
+}
+
+.b-dics--vertical .b-dics__slider {
+	top: 100%;
+	transform: translateY(-50%);
+	width: 100%;
+	height: 3px;
+	padding: 30px 0;
+	left: 0;
+}
+
+.b-dics--vertical .b-dics__slider:after {
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	width: 100%;
+	height: 3px;
+}
+
+.b-dics--vertical .b-dics__slider:before {
+	transform: translate(-50%, -50%);
+}

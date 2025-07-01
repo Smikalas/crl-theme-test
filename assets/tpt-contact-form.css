@@ -1,0 +1,108 @@
+
+.tpt-contact-form {
+	display: flex;
+	background-color: white;
+	border-radius: 32px;
+	box-shadow: 0 4px 25px 0 rgba(0, 0, 0, 0.15);
+	overflow: hidden;
+}
+.tpt-contact-form-left {
+	background-color: var(--contact-background-color);
+	color: var(--contact-text-color);
+	padding: 40px;
+	width: 40%;
+}
+.tpt-contact-form-left>p>span{
+	position: relative;
+	padding-left: 30px;
+}
+.tpt-contact-form-left>p>span::before{
+	content: "";
+	display: block;
+	width: 24px;
+	height: 1px;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(50%);
+	background-color: var(--contact-text-color);
+}
+.tpt-contact-form-left *{
+	color: var(--form-text-color);
+}
+.tpt-contact-form-left h2 {
+	margin-top: 0;
+}
+.tpt-contact-form-left p {
+	margin: 20px 0;
+}
+.tpt-contact-form-left .icon {
+	margin-right: 10px;
+}
+.tpt-contact-form-right {
+	padding: 40px;
+	width: 60%;
+	background-color: var(--form-background-color);
+	color: var(--form-text-color);
+}
+.tpt-contact-form-right *{
+	color: var(--form-text-color);
+}
+.tpt-contact-form-right .form-large-group{
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+}
+.tpt-contact-form-right .form-large-group .form-group{
+	flex: 1;
+}
+.tpt-contact-form-right .form-group {
+	margin-bottom: 20px;
+}
+.tpt-contact-form-right .form-group label {
+	display: block;
+	margin-bottom: 5px;
+}
+.tpt-contact-form-right .form-group input,
+.tpt-contact-form-right .form-group textarea {
+	width: 100%;
+	padding: 10px;
+	border: 0;
+	border-bottom: 1px solid #000;
+	position: relative;
+}
+
+.tpt-contact-form-right .form-group input:focus,
+.tpt-contact-form-right .form-group input:focus-visible,
+.tpt-contact-form-right .form-group textarea:focus,
+.tpt-contact-form-right .form-group textarea:focus-visible{
+	outline: none;
+	box-shadow: none;
+	border-bottom: 1px solid var(--form-button-color);
+}
+.tpt-contact-form-right .form-group textarea {
+	resize: none;
+	height: 100px;
+}
+.tpt-contact-form-right .form-group button {
+	background-color: white;
+	color: var(--form-button-color);
+	border: 1px solid var(--form-button-color);
+	padding: 10px 20px;
+	border-radius: 50px;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s;
+}
+.tpt-contact-form-right .form-group button:hover {
+	background-color: var(--form-button-color);
+	color: white;
+}
+@media (max-width: 768px) {
+	.tpt-contact-form {
+		flex-direction: column;
+	}
+	.tpt-contact-form-left, 
+	.tpt-contact-form-right {
+		width: 100%;
+	}
+}

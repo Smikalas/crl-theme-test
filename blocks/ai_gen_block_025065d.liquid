@@ -1,0 +1,142 @@
+{% doc %}
+  @prompt
+    A auto video block, auto loop
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-video-container-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .ai-video-wrapper-{{ ai_gen_id }} {
+    position: relative;
+    width: 100%;
+    padding-bottom: {{ block.settings.aspect_ratio }}%;
+  }
+
+  .ai-video-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: {{ block.settings.object_fit }};
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-video-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: {{ block.settings.placeholder_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-video-placeholder-{{ ai_gen_id }} svg {
+    width: 50%;
+    height: 50%;
+    opacity: 0.7;
+  }
+{% endstyle %}
+
+<div class="ai-video-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-video-wrapper-{{ ai_gen_id }}">
+    {% if block.settings.video_url != blank %}
+      <video
+        class="ai-video-{{ ai_gen_id }}"
+        src="{{ block.settings.video_url }}"
+        autoplay
+        muted
+        loop
+        playsinline
+        {% if block.settings.lazy_load %}loading="lazy"{% endif %}
+      ></video>
+    {% else %}
+      <div class="ai-video-placeholder-{{ ai_gen_id }}">
+        {{ 'image' | placeholder_svg_tag }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Auto Loop Video",
+  "tag": null,
+  "settings": [
+    {
+      "type": "url",
+      "id": "video_url",
+      "label": "Video URL",
+      "info": "Enter a direct link to your MP4 video file"
+    },
+    {
+      "type": "range",
+      "id": "aspect_ratio",
+      "min": 25,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Aspect ratio",
+      "default": 55,
+      "info": "Sets the height of the video container relative to its width"
+    },
+    {
+      "type": "select",
+      "id": "object_fit",
+      "label": "Video fit",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover (fill container)"
+        },
+        {
+          "value": "contain",
+          "label": "Contain (show all content)"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "checkbox",
+      "id": "lazy_load",
+      "label": "Lazy load video",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Appearance"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "placeholder_color",
+      "label": "Placeholder background",
+      "default": "#f4f4f4"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Auto Loop Video"
+    }
+  ]
+}
+{% endschema %}
