@@ -1,9 +1,11 @@
 <section class="announcement-bar-section announcement-bar-appear" style="padding-top: {{ section.settings.padding_top | default: 12 }}px; padding-bottom: {{ section.settings.padding_bottom | default: 12 }}px;">
   <div class="announcement-bar__inner">
     {% assign messages = section.blocks | where: 'type', 'message' %}
-    {% if messages.size > 0 %}
-      {% for block in messages %}
-        <span class="announcement-bar__text" data-announcement-index="{{ forloop.index0 }}" style="display: {% if forloop.first %}inline{% else %}none{% endif %};">{{ block.settings.text }}</span>
+    {% if section.blocks.size > 0 %}
+      {% for block in section.blocks %}
+        {% if block.type == 'message' %}
+          <span class="announcement-bar__text" data-announcement-index="{{ forloop.index0 }}" style="display: {% if forloop.first %}inline{% else %}none{% endif %};">{{ block.settings.text }}</span>
+        {% endif %}
       {% endfor %}
     {% else %}
       <span class="announcement-bar__text">{{ section.settings.announcement_text }}</span>
