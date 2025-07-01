@@ -4169,7 +4169,7 @@ text-component {
   width: 0;
   border-radius: 200px;
   height: 2px; /* Adjust the thickness of the line */
-  background-color: #ff1b1b; /* Adjust the line color */
+  background-color: #000000a3; /* Adjust the line color */
   transition: width 0.3s ease; /* Animation duration */
 }
 
