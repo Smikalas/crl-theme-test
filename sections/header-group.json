@@ -18,8 +18,8 @@
           "type": "announcement",
           "settings": {
             "text": "Welcome to our store",
-            "link": "",
-            "text_style": "body"
+            "link": "shopify://collections/smirdi1",
+            "text_style": "uppercase"
           }
         },
         "announcement_prhqB3": {
