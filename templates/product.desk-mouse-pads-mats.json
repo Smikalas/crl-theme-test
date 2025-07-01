@@ -130,19 +130,6 @@
                   },
                   "blocks": {}
                 },
-                "review_cTT3GA": {
-                  "type": "review",
-                  "name": "t:names.product_review_stars",
-                  "settings": {
-                    "product": "{{ closest.product }}",
-                    "stars_style": "shaded",
-                    "show_number": true,
-                    "rating_color": "primary",
-                    "type_preset": "paragraph",
-                    "alignment": "left"
-                  },
-                  "blocks": {}
-                },
                 "group_8B3NLh": {
                   "type": "group",
                   "settings": {
@@ -225,7 +212,6 @@
               },
               "block_order": [
                 "text_xrnftG",
-                "review_cTT3GA",
                 "group_8B3NLh"
               ]
             },
@@ -473,6 +459,10 @@
               },
               "block_order": []
             },
+            "judge_me_reviews_preview_badge_YUXRGd": {
+              "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+              "settings": {}
+            },
             "divider": {
               "type": "_divider",
               "settings": {
@@ -490,6 +480,7 @@
             "variant_picker_gyUmGT",
             "group_VyADhB",
             "buy_buttons",
+            "judge_me_reviews_preview_badge_YUXRGd",
             "divider"
           ]
         }
