@@ -50,10 +50,10 @@
         "movement_direction": "reverse",
         "speed": 15,
         "gap_between_elements": 84,
-        "color_scheme": "scheme-5",
+        "color_scheme": "scheme-2",
         "divider_width": 1,
-        "padding-block-start": 12,
-        "padding-block-end": 12,
+        "padding-block-start": 10,
+        "padding-block-end": 0,
         "padding-inline-start": 0,
         "padding-inline-end": 0
       }
