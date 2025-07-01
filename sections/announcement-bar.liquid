@@ -37,4 +37,32 @@
   padding: 1rem 2rem;
   white-space: nowrap;
 }
+.marquee__wrapper {
+  display: flex;
+  gap: var(--marquee-gap, 2rem);
+  width: fit-content;
+  white-space: nowrap;
+}
+.marquee__content {
+  min-width: max-content;
+  display: flex;
+  gap: var(--marquee-gap, 2rem);
+}
+.marquee__repeated-items {
+  min-width: max-content;
+  display: flex;
+  gap: var(--marquee-gap, 2rem);
+  align-items: center;
+  justify-content: center;
+}
+@media (prefers-reduced-motion: no-preference) {
+  marquee-component:not([data-disabled]) .marquee__wrapper {
+    animation: marquee-motion var(--marquee-speed, 20s) linear infinite;
+  }
+}
+@keyframes marquee-motion {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
 {% endstylesheet %}
