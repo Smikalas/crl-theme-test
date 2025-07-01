@@ -11,15 +11,6 @@
   "type": "header",
   "name": "t:names.header",
   "sections": {
-    "announcement_bar_C7HCc9": {
-      "type": "announcement-bar",
-      "name": "Announcement bar",
-      "settings": {
-        "announcement_text": "Welcome",
-        "padding_top": 4,
-        "padding_bottom": 4
-      }
-    },
     "header_section": {
       "type": "header",
       "blocks": {
@@ -66,7 +57,9 @@
           "blocks": {}
         }
       },
-      "custom_css": [],
+      "custom_css": [
+        ".menu-drawer__menu-item--mainlist {font-size: 14px;}"
+      ],
       "settings": {
         "logo_position": "center",
         "menu_position": "left",
@@ -98,7 +91,6 @@
     }
   },
   "order": [
-    "announcement_bar_C7HCc9",
     "header_section"
   ]
 }
