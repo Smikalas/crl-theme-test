@@ -1,6 +1,6 @@
 <section class="announcement-bar-section announcement-bar-appear">
   <div class="announcement-bar__inner">
-    <span class="announcement-bar__text">🚀 Welcome to our store! Enjoy free shipping on all orders! 🚀</span>
+    <span class="announcement-bar__text">{{ section.settings.announcement_text }}</span>
   </div>
 </section>
 
@@ -36,3 +36,22 @@
   }
 }
 {% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Announcement bar",
+  "settings": [
+    {
+      "type": "text",
+      "id": "announcement_text",
+      "label": "Announcement text",
+      "default": "🚀 Welcome to our store! Enjoy free shipping on all orders! 🚀"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement bar"
+    }
+  ]
+}
+{% endschema %}
