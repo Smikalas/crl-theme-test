@@ -4176,3 +4176,23 @@ text-component {
 .mega-menu__link:hover::after {
   width: 100%;
 }
+.menu-drawer__menu-item {
+  display: flex;
+  align-items: center;
+  padding: var(--padding-xs) var(--padding-sm);
+  color: var(--color-foreground);
+  text-decoration: none;
+  transition: background-color var(--animation-speed) ease-in-out;
+
+  &:hover {
+    background-color: rgba(from var(--color-foreground) r g b / 10%);
+  }
+
+  &.menu-drawer__menu-item--active {
+    background-color: rgba(from var(--color-foreground) r g b / 20%);
+    color: var(--color-active);
+  }
+}
+.menu-drawer__menu-item--mainlist {
+  font-size: 14px;
+}
