@@ -14,14 +14,6 @@
     "marquee_bar_H3xNcm": {
       "type": "marquee-bar",
       "blocks": {
-        "announcement_DCHhPY": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": "shopify://collections/smirdi1",
-            "text_style": "uppercase"
-          }
-        },
         "announcement_prhqB3": {
           "type": "announcement",
           "settings": {
@@ -37,12 +29,20 @@
             "link": "",
             "text_style": "body"
           }
+        },
+        "announcement_FmViEc": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": "",
+            "text_style": "uppercase"
+          }
         }
       },
       "block_order": [
-        "announcement_DCHhPY",
         "announcement_prhqB3",
-        "announcement_x3rUXW"
+        "announcement_x3rUXW",
+        "announcement_FmViEc"
       ],
       "name": "Marquee Announcement",
       "settings": {
@@ -51,7 +51,7 @@
         "speed": 10,
         "gap_between_elements": 100,
         "color_scheme": "scheme-5",
-        "divider_width": 2.5,
+        "divider_width": 0.5,
         "padding-block-start": 8,
         "padding-block-end": 8,
         "padding-inline-start": 0,
