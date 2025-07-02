@@ -584,8 +584,8 @@
                 "line_height": "0.8",
                 "letter_spacing": "-0.03em",
                 "case": "uppercase",
-                "text_effect": "none",
-                "animation_repeat": false
+                "text_effect": "reveal",
+                "animation_repeat": true
               },
               "blocks": {}
             }
