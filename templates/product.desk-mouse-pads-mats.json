@@ -578,8 +578,8 @@
               "type": "jumbo-text",
               "name": "t:names.jumbo_text",
               "settings": {
-                "text": "Up\nThe\nAnte",
-                "font": "heading",
+                "text": "Enhance\nYour\nTable",
+                "font": "subheading",
                 "alignment": "right",
                 "line_height": "0.8",
                 "letter_spacing": "-0.03em",
