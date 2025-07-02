@@ -588,7 +588,7 @@
             "image": "shopify://shop_images/DALL_E_2025-03-13_20.04.20_-_A_large_sleek_white_paper_cup_filled_with_a_vibrant_purple_drink_splashing_out_dramatically._Above_the_cup_numerous_pills_of_different_shapes_and_c.webp",
             "heading": "Discover Something Amazing",
             "subheading": "<p>Experience the perfect blend of style and functionality with our carefully curated collection.</p>",
-            "layout": "image-right",
+            "layout": "image-left",
             "mobile_image_first": true,
             "content_gap": 60,
             "mobile_gap": 30,
