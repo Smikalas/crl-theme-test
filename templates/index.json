@@ -114,6 +114,7 @@
           "settings": {
             "image": "shopify://shop_images/Alc_materials.png",
             "aspect_ratio": 80,
+            "aspect_ratio_mobile": 70,
             "zoom_factor": 1.1,
             "border_radius": 0,
             "overlay_color": "#1c1c1c",
@@ -134,6 +135,7 @@
           "settings": {
             "image": "shopify://shop_images/SPREAD_CASE_enh.png",
             "aspect_ratio": 80,
+            "aspect_ratio_mobile": 70,
             "zoom_factor": 1.1,
             "border_radius": 0,
             "overlay_color": "#000000",
@@ -189,16 +191,17 @@
           "type": "Animated-image",
           "name": "Animated Image",
           "settings": {
-            "image": "shopify://shop_images/electronics-and-accessories-natural-5-bottom.jpg",
-            "aspect_ratio": 60,
+            "image": "shopify://shop_images/backnigh.png",
+            "aspect_ratio": 40,
+            "aspect_ratio_mobile": 70,
             "zoom_factor": 1.1,
             "border_radius": 0,
             "overlay_color": "#000000",
             "overlay_opacity": 0.3,
-            "overlay_opacity_hover": 0.5,
+            "overlay_opacity_hover": 0.6,
             "text": "Discover More",
             "text_color": "#ffffff",
-            "text_size": 32,
+            "text_size": 52,
             "text_size_mobile": 24,
             "text_weight": "600",
             "link": ""
