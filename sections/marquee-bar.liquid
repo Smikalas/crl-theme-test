@@ -19,29 +19,55 @@
   >
     <div class="marquee__wrapper" ref="wrapper">
       <div class="marquee__content" ref="content">
-        {% for block in section.blocks %}
-          {%- assign plain_text = block.settings.text | strip_newlines | strip_html | strip -%}
-          {%- unless plain_text == '' -%}
-            <div 
-              class="announcement-marquee__item {% if block.settings.text_style %}{{ block.settings.text_style }}{% endif %}"
-              {{ block.shopify_attributes }}
-            >
-              <p class="announcement-marquee__text">
-                {{ block.settings.text }}
-              </p>
-              {% if block.settings.link != blank %}
-                <a
-                  class="announcement-marquee__link"
-                  href="{{ block.settings.link }}"
-                >
-                  <span class="visually-hidden">
-                    {{ block.settings.text | strip_html }}
+        <div class="marquee__track">
+          {% for block in section.blocks %}
+            {%- assign plain_text = block.settings.text | strip_newlines | strip_html | strip -%}
+            {%- unless plain_text == '' -%}
+              <div 
+                class="announcement-marquee__item {% if block.settings.text_style %}{{ block.settings.text_style }}{% endif %}"
+                {{ block.shopify_attributes }}
+              >
+                <p class="announcement-marquee__text">
+                  {{ block.settings.text }}
+                </p>
+                {% if block.settings.link != blank %}
+                  <a
+                    class="announcement-marquee__link"
+                    href="{{ block.settings.link }}"
+                  >
+                    <span class="visually-hidden">
+                      {{ block.settings.text | strip_html }}
                     </span>
-                </a>
-              {% endif %}
-            </div>
-          {%- endunless -%}
-        {% endfor %}
+                  </a>
+                {% endif %}
+              </div>
+            {%- endunless -%}
+          {% endfor %}
+        </div>
+        <div class="marquee__track" aria-hidden="true">
+          {% for block in section.blocks %}
+            {%- assign plain_text = block.settings.text | strip_newlines | strip_html | strip -%}
+            {%- unless plain_text == '' -%}
+              <div 
+                class="announcement-marquee__item {% if block.settings.text_style %}{{ block.settings.text_style }}{% endif %}"
+              >
+                <p class="announcement-marquee__text">
+                  {{ block.settings.text }}
+                </p>
+                {% if block.settings.link != blank %}
+                  <a
+                    class="announcement-marquee__link"
+                    href="{{ block.settings.link }}"
+                  >
+                    <span class="visually-hidden">
+                      {{ block.settings.text | strip_html }}
+                    </span>
+                  </a>
+                {% endif %}
+              </div>
+            {%- endunless -%}
+          {% endfor %}
+        </div>
       </div>
     </div>
   </marquee-component>
@@ -81,9 +107,14 @@
 
   .marquee__content {
     display: flex;
+    width: max-content;
+  }
+
+  .marquee__track {
+    display: flex;
     gap: var(--marquee-gap);
     padding-right: var(--marquee-gap);
-    min-width: 100%;
+    min-width: max-content;
   }
 
   .announcement-marquee__item {
@@ -118,7 +149,7 @@
       transform: translateX(0);
     }
     to {
-      transform: translateX(calc(-100% - var(--marquee-gap)));
+      transform: translateX(-50%);
     }
   }
 
@@ -127,7 +158,7 @@
       -webkit-transform: translateX(0);
     }
     to {
-      -webkit-transform: translateX(calc(-100% - var(--marquee-gap)));
+      -webkit-transform: translateX(-50%);
     }
   }
 
