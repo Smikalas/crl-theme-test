@@ -2,11 +2,22 @@
   .featured-collection-image {
     padding: var(--grid-desktop-horizontal-spacing) 0;
   }
+  
+  .featured-collection-image.full-width {
+    padding: 0;
+    max-width: 100%;
+    margin: 0;
+  }
 
   .collection-image-grid {
     display: grid;
     grid-template-columns: repeat({{ section.settings.columns_desktop }}, 1fr);
     grid-gap: {{ section.settings.gap }}px;
+  }
+  
+  .full-width .collection-image-grid {
+    margin: 0;
+    padding: 0;
   }
 
   .collection-image-item {
@@ -76,7 +87,8 @@
     width: 60px;
     height: 2px;
     background-color: rgb(var(--color-background));
-    transition: width 0.4s ease;
+    transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    transform-origin: left center;
   }
 
   @media screen and (max-width: 749px) {
@@ -95,12 +107,12 @@
     }
 
     .collection-image-item:hover .collection-image-item__title::after {
-      width: 100px;
+      width: 100%;
     }
   }
 {%- endstyle -%}
 
-<div class="featured-collection-image page-width{% if section.settings.full_width %} page-width-desktop{% endif %}">
+<div class="featured-collection-image{% if section.settings.full_width %} full-width{% else %} page-width{% endif %}">
   {% if section.settings.title != blank %}
     <div class="title-wrapper-with-link{% if section.settings.title == blank %} title-wrapper-with-link--no-heading{% endif %} {% if section.settings.secondary_title == blank %} title-wrapper-with-link--no-heading{% endif %}">
       <h2 class="title {{ section.settings.heading_size }}">{{ section.settings.title | escape }}</h2>
@@ -160,19 +172,19 @@
       "options": [
         {
           "value": "h2",
-          "label": "t:sections.all.heading_size.options__1.label"
+          "label": "Small"
         },
         {
           "value": "h1",
-          "label": "t:sections.all.heading_size.options__2.label"
+          "label": "Medium"
         },
         {
           "value": "h0",
-          "label": "t:sections.all.heading_size.options__3.label"
+          "label": "Large"
         }
       ],
       "default": "h1",
-      "label": "t:sections.all.heading_size.label"
+      "label": "Heading size"
     },
     {
       "type": "select",
