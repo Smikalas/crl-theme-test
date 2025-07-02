@@ -1,0 +1,160 @@
+{%- style -%}
+  .animated-image {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--style-border-radius);
+    aspect-ratio: {{ block.settings.aspect_ratio }};
+  }
+
+  .animated-image__link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .animated-image__media {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  .animated-image__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      rgba(0, 0, 0, 0.4) 100%
+    );
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .animated-image__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: var(--padding-xl);
+    transform: translateY(1rem);
+    opacity: 0;
+    transition: all 0.4s ease;
+  }
+
+  .animated-image__title {
+    color: rgb(var(--color-background));
+    margin: 0;
+    position: relative;
+    padding-bottom: 1em;
+  }
+
+  .animated-image__title::after {
+    content: '';
+    position: absolute;
+    bottom: 0.5em;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(var(--color-background));
+    transition: width 0.4s ease 0.2s;
+  }
+
+  @media (hover: hover) {
+    .animated-image:hover .animated-image__media {
+      transform: scale(1.1);
+    }
+
+    .animated-image:hover .animated-image__overlay {
+      opacity: 1;
+    }
+
+    .animated-image:hover .animated-image__content {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .animated-image:hover .animated-image__title::after {
+      width: 50px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="animated-image">
+  <a href="{{ block.settings.link }}" class="animated-image__link">
+    {% if block.settings.image != blank %}
+      {{
+        block.settings.image
+        | image_url: width: 2000
+        | image_tag:
+          loading: 'lazy',
+          class: 'animated-image__media'
+      }}
+    {% else %}
+      {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder animated-image__media' }}
+    {% endif %}
+    <div class="animated-image__overlay"></div>
+    <div class="animated-image__content">
+      <h2 class="animated-image__title h3">
+        {{ block.settings.title | escape }}
+      </h2>
+    </div>
+  </a>
+</div>
+
+{% schema %}
+{
+  "name": "Animated Image with Text",
+  "target": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Image with text overlay"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "select",
+      "id": "aspect_ratio",
+      "label": "Aspect ratio",
+      "options": [
+        {
+          "value": "auto",
+          "label": "Adapt to image"
+        },
+        {
+          "value": "1/1",
+          "label": "Square (1:1)"
+        },
+        {
+          "value": "2/3",
+          "label": "Portrait (2:3)"
+        },
+        {
+          "value": "3/2",
+          "label": "Landscape (3:2)"
+        },
+        {
+          "value": "16/9",
+          "label": "Widescreen (16:9)"
+        }
+      ],
+      "default": "3/2"
+    }
+  ]
+}
+{% endschema %}
