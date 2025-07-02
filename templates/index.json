@@ -190,7 +190,7 @@
           "name": "Animated Image",
           "settings": {
             "image": "shopify://shop_images/enh_engraved_case.png",
-            "aspect_ratio": 50,
+            "aspect_ratio": 45,
             "zoom_factor": 1.1,
             "border_radius": 0,
             "overlay_color": "#000000",
@@ -198,7 +198,7 @@
             "overlay_opacity_hover": 0.5,
             "text": "Discover More",
             "text_color": "#FFFFFF",
-            "text_size": 32,
+            "text_size": 46,
             "text_size_mobile": 24,
             "text_weight": "600",
             "link": ""
