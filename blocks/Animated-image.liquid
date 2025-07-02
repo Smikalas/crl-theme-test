@@ -112,11 +112,12 @@
     display: block;
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
     width: 0;
     height: 2px;
     background-color: {{ block.settings.text_color }};
     transition: width 0.5s ease;
+    transform: translateX(-50%);
   }
 
   .animated-image-block-{{ ai_gen_id }}:hover .animated-image-block__underline-{{ ai_gen_id }} {
