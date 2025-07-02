@@ -19,31 +19,29 @@
   >
     <div class="marquee__wrapper" ref="wrapper">
       <div class="marquee__content" ref="content">
-        <div class="marquee__repeated-items">
-          {% for block in section.blocks %}
-            {%- assign plain_text = block.settings.text | strip_newlines | strip_html | strip -%}
-            {%- unless plain_text == '' -%}
-              <div 
-                class="announcement-marquee__item {% if block.settings.text_style %}{{ block.settings.text_style }}{% endif %}"
-                {{ block.shopify_attributes }}
-              >
-                <p class="announcement-marquee__text">
-                  {{ block.settings.text }}
-                </p>
-                {% if block.settings.link != blank %}
-                  <a
-                    class="announcement-marquee__link"
-                    href="{{ block.settings.link }}"
-                  >
-                    <span class="visually-hidden">
-                      {{ block.settings.text | strip_html }}
+        {% for block in section.blocks %}
+          {%- assign plain_text = block.settings.text | strip_newlines | strip_html | strip -%}
+          {%- unless plain_text == '' -%}
+            <div 
+              class="announcement-marquee__item {% if block.settings.text_style %}{{ block.settings.text_style }}{% endif %}"
+              {{ block.shopify_attributes }}
+            >
+              <p class="announcement-marquee__text">
+                {{ block.settings.text }}
+              </p>
+              {% if block.settings.link != blank %}
+                <a
+                  class="announcement-marquee__link"
+                  href="{{ block.settings.link }}"
+                >
+                  <span class="visually-hidden">
+                    {{ block.settings.text | strip_html }}
                     </span>
-                  </a>
-                {% endif %}
-              </div>
-            {%- endunless -%}
-          {% endfor %}
-        </div>
+                </a>
+              {% endif %}
+            </div>
+          {%- endunless -%}
+        {% endfor %}
       </div>
     </div>
   </marquee-component>
@@ -63,30 +61,36 @@
     display: block;
     width: 100%;
     overflow: hidden;
+    -webkit-mask-image: -webkit-linear-gradient(left, transparent 0%, black 5%, black 95%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
   }
 
   .announcement-marquee__text {
     margin: 0;
     line-height: 1;
+    white-space: nowrap;
   }
 
   .marquee__wrapper {
+    position: relative;
     display: flex;
-    gap: var(--marquee-gap);
-    width: fit-content;
+    width: max-content;
+    transform: translateX(0);
     white-space: nowrap;
   }
 
   .marquee__content {
-    min-width: max-content;
     display: flex;
     gap: var(--marquee-gap);
+    padding-right: var(--marquee-gap);
+    min-width: 100%;
   }
 
   .announcement-marquee__item {
     display: flex;
     align-items: center;
     position: relative;
+    flex-shrink: 0;
   }
 
   .announcement-marquee__link {
@@ -94,33 +98,13 @@
     inset: 0;
   }
 
-  .marquee__content :is(p, h1, h2, h3, h4, h5, h6) {
-    white-space: nowrap;
+  .marquee__content {
+    animation: scroll var(--marquee-speed) linear infinite var(--marquee-direction);
+    animation-play-state: running;
   }
 
-  .marquee__content .marquee__repeated-items * {
-    max-width: none;
-  }
-
-  .marquee__repeated-items {
-    min-width: max-content;
-    display: flex;
-    gap: var(--marquee-gap);
-    align-items: center;
-    justify-content: center;
-  }
-
-  .marquee__repeated-items > * {
-    align-content: center;
-  }
-
-  .announcement-marquee__container:not([data-disabled]) .marquee__wrapper {
-    animation: marquee-motion var(--marquee-speed) linear infinite var(--marquee-direction);
-    will-change: transform;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
+  .announcement-marquee__container:hover .marquee__content {
+    animation-play-state: paused;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -129,15 +113,27 @@
     }
   }
 
-  @keyframes marquee-motion {
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
     to {
-      transform: translate3d(calc(-50% - (var(--marquee-gap) / 2)), 0, 0);
+      transform: translateX(calc(-100% - var(--marquee-gap)));
     }
   }
 
-  @-webkit-keyframes marquee-motion {
+  @-webkit-keyframes scroll {
+    from {
+      -webkit-transform: translateX(0);
+    }
     to {
-      -webkit-transform: translate3d(calc(-50% - (var(--marquee-gap) / 2)), 0, 0);
+      -webkit-transform: translateX(calc(-100% - var(--marquee-gap)));
+    }
+  }
+
+  @media (hover: hover) {
+    .announcement-marquee__container:hover .marquee__content {
+      animation-play-state: paused;
     }
   }
 {% endstylesheet %}
