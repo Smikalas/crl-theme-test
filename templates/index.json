@@ -105,43 +105,6 @@
         "padding-block-end": 10
       }
     },
-    "featured_coll_im_bJpEkY": {
-      "type": "featured-coll-im",
-      "blocks": {
-        "collection_image_YW6JUi": {
-          "type": "collection_image",
-          "settings": {
-            "image": "shopify://shop_images/Alc_materials.png",
-            "title": "kkk",
-            "link": ""
-          }
-        },
-        "collection_image_RP7afn": {
-          "type": "collection_image",
-          "settings": {
-            "image": "shopify://shop_images/alcantara_rubyred.png",
-            "title": "SHOP NEW WOMENS",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection_image_YW6JUi",
-        "collection_image_RP7afn"
-      ],
-      "name": "Collection Image Grid",
-      "settings": {
-        "title": "",
-        "secondary_title": "",
-        "heading_size": "h1",
-        "aspect_ratio": "3/2",
-        "columns_desktop": 2,
-        "columns_mobile": 1,
-        "gap": 4,
-        "border_radius": 0,
-        "full_width": true
-      }
-    },
     "section_rDp3Hb": {
       "type": "section",
       "blocks": {
@@ -465,7 +428,6 @@
   },
   "order": [
     "hero_ATpyG8",
-    "featured_coll_im_bJpEkY",
     "section_rDp3Hb",
     "marquee_9JDDgR"
   ]
