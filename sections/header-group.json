@@ -29,11 +29,20 @@
             "link": "",
             "text_style": "body"
           }
+        },
+        "announcement_FmViEc": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": "",
+            "text_style": "uppercase"
+          }
         }
       },
       "block_order": [
         "announcement_prhqB3",
-        "announcement_x3rUXW"
+        "announcement_x3rUXW",
+        "announcement_FmViEc"
       ],
       "name": "Marquee Announcement",
       "settings": {
