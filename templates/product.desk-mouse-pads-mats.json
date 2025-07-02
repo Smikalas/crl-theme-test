@@ -557,6 +557,7 @@
           "static": true,
           "settings": {
             "media_type": "image",
+            "image": "shopify://shop_images/electronics-and-accessories-natural-5-bottom.jpg",
             "link": "",
             "video_loop": true,
             "video_autoplay": false,
@@ -579,9 +580,9 @@
               "name": "t:names.jumbo_text",
               "settings": {
                 "text": "Enhance\nYour\nTable",
-                "font": "subheading",
-                "alignment": "right",
-                "line_height": "0.8",
+                "font": "heading",
+                "alignment": "center",
+                "line_height": "1",
                 "letter_spacing": "-0.03em",
                 "case": "uppercase",
                 "text_effect": "reveal",
@@ -599,7 +600,7 @@
       "settings": {
         "media_position": "left",
         "media_width": "medium",
-        "media_height": "60svh",
+        "media_height": "80svh",
         "section_width": "full-width",
         "extend_media": true,
         "color_scheme": "scheme-3",
