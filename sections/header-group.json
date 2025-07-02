@@ -18,7 +18,7 @@
           "type": "announcement",
           "settings": {
             "text": "Free shipping on orders over $50",
-            "link": "",
+            "link": "shopify://collections/smirdi1",
             "text_style": "body"
           }
         },
@@ -26,7 +26,7 @@
           "type": "announcement",
           "settings": {
             "text": "Sign up for our newsletter",
-            "link": "",
+            "link": "shopify://blogs/news",
             "text_style": "body"
           }
         },
@@ -34,7 +34,7 @@
           "type": "announcement",
           "settings": {
             "text": "Welcome to our store",
-            "link": "",
+            "link": "shopify://pages/contact",
             "text_style": "uppercase"
           }
         }
@@ -44,6 +44,9 @@
         "announcement_x3rUXW",
         "announcement_FmViEc"
       ],
+      "custom_css": [
+        ".announcement-marquee__text {font-weight: bolder;}"
+      ],
       "name": "Marquee Announcement",
       "settings": {
         "section_width": "full-width",
@@ -52,8 +55,8 @@
         "gap_between_elements": 100,
         "color_scheme": "scheme-5",
         "divider_width": 0.5,
-        "padding-block-start": 8,
-        "padding-block-end": 8,
+        "padding-block-start": 10,
+        "padding-block-end": 10,
         "padding-inline-start": 0,
         "padding-inline-end": 0
       }
