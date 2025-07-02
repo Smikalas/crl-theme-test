@@ -44,6 +44,9 @@
         "announcement_x3rUXW",
         "announcement_FmViEc"
       ],
+      "custom_css": [
+        ".announcement-marquee__text {font-weight: bolder;}"
+      ],
       "name": "Marquee Announcement",
       "settings": {
         "section_width": "full-width",
