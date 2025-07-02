@@ -30,6 +30,12 @@
     overflow: hidden;
   }
 
+  @media screen and (max-width: 749px) {
+    .animated-image-block__image-container-{{ ai_gen_id }} {
+      padding-bottom: {{ block.settings.aspect_ratio_mobile }}%;
+    }
+  }
+
   .animated-image-block__image-{{ ai_gen_id }} {
     position: absolute;
     top: 0;
@@ -189,6 +195,16 @@
       "unit": "%",
       "label": "Aspect ratio",
       "default": 60
+    },
+    {
+      "type": "range",
+      "id": "aspect_ratio_mobile",
+      "min": 30,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "Aspect ratio on mobile",
+      "default": 100
     },
     {
       "type": "range",
