@@ -105,13 +105,13 @@
     width: 0;
     height: 2px;
     background-color: {{ block.settings.text_color }};
-    margin: 0 auto;
+    margin: 0;
     transition: width 0.5s ease;
-    transform: translateX(0%);
+    transform-origin: left;
   }
 
   .animated-image-block-{{ ai_gen_id }}:hover .animated-image-block__underline-{{ ai_gen_id }} {
-    width: 60%;
+    width: 100%;
   }
 
 
