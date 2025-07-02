@@ -192,7 +192,7 @@
           "name": "Animated Image",
           "settings": {
             "image": "shopify://shop_images/backnigh.png",
-            "aspect_ratio": 45,
+            "aspect_ratio": 40,
             "aspect_ratio_mobile": 70,
             "zoom_factor": 1.1,
             "border_radius": 0,
