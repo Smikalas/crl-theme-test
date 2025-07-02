@@ -113,7 +113,7 @@
           "name": "Animated Image",
           "settings": {
             "image": "shopify://shop_images/Alc_materials.png",
-            "aspect_ratio": 75,
+            "aspect_ratio": 80,
             "zoom_factor": 1.1,
             "border_radius": 0,
             "overlay_color": "#1c1c1c",
@@ -133,7 +133,7 @@
           "name": "Animated Image",
           "settings": {
             "image": "shopify://shop_images/SPREAD_CASE_enh.png",
-            "aspect_ratio": 75,
+            "aspect_ratio": 80,
             "zoom_factor": 1.1,
             "border_radius": 0,
             "overlay_color": "#000000",
