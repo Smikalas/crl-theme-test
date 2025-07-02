@@ -198,10 +198,10 @@
             "border_radius": 0,
             "overlay_color": "#000000",
             "overlay_opacity": 0.3,
-            "overlay_opacity_hover": 0.5,
+            "overlay_opacity_hover": 0.6,
             "text": "Discover More",
             "text_color": "#ffffff",
-            "text_size": 32,
+            "text_size": 52,
             "text_size_mobile": 24,
             "text_weight": "600",
             "link": ""
