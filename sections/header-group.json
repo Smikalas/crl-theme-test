@@ -45,7 +45,7 @@
         "announcement_FmViEc"
       ],
       "custom_css": [
-        ".announcement-marquee__text {font-weight: bolder;}"
+        ".announcement-marquee__text {font-weight: bolder; font-family: ;}"
       ],
       "name": "Marquee Announcement",
       "settings": {
