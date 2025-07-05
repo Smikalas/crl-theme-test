@@ -41,6 +41,22 @@
                   </a>
                 {% endif %}
               </div>
+              {% unless forloop.last %}
+                {% if section.settings.icon != 'none' %}
+                  <div class="announcement-marquee__separator" aria-hidden="true">
+                    {% case section.settings.icon %}
+                      {% when 'dot' %}
+                        <span class="icon-dot"></span>
+                      {% when 'circle' %}
+                        <span class="icon-circle"></span>
+                      {% when 'star' %}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="{{ section.settings.icon_size }}" height="{{ section.settings.icon_size }}"><path d="M12 1.89l2.75 6.6 7.25.79-5.5 4.86 1.65 7-6.15-3.79-6.15 3.79 1.65-7-5.5-4.86 7.25-.79z"/></svg>
+                      {% when 'diamond' %}
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="{{ section.settings.icon_size }}" height="{{ section.settings.icon_size }}"><path d="M12 0l12 12-12 12L0 12z"/></svg>
+                    {% endcase %}
+                  </div>
+                {% endif %}
+              {% endunless %}
             {%- endunless -%}
           {% endfor %}
         </div>
@@ -115,6 +131,33 @@
 
   .marquee__repeated-items > * {
     align-content: center;
+  }
+
+  .announcement-marquee__separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: {{ section.settings.icon_color }};
+  }
+
+  .announcement-marquee__separator .icon-dot {
+    width: {{ section.settings.icon_size }}px;
+    height: {{ section.settings.icon_size }}px;
+    background-color: currentColor;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .announcement-marquee__separator .icon-circle {
+    width: {{ section.settings.icon_size }}px;
+    height: {{ section.settings.icon_size }}px;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+  .announcement-marquee__separator svg {
+    fill: currentColor;
   }
 
   @media (prefers-reduced-motion: no-preference) {
@@ -242,6 +285,54 @@
       "step": 0.5,
       "unit": "px",
       "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Icon settings"
+    },
+    {
+      "type": "select",
+      "id": "icon",
+      "label": "Separator icon",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "dot",
+          "label": "Dot"
+        },
+        {
+          "value": "circle",
+          "label": "Circle"
+        },
+        {
+          "value": "star",
+          "label": "Star"
+        },
+        {
+          "value": "diamond",
+          "label": "Diamond"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "label": "Icon size",
+      "min": 4,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "color",
+      "id": "icon_color",
+      "label": "Icon color",
+      "default": "currentColor"
     },
     {
       "type": "header",
