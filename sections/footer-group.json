@@ -21,11 +21,11 @@
             "heading_text": "Be a part of our community",
             "fill_image": "shopify://shop_images/preview_59a47158-8ff3-4f52-b83e-14d2d29a3ab4.jpg",
             "font_family": "helvetica_n4",
-            "font_size": 40,
-            "text_transform": "none",
-            "letter_spacing": 0,
+            "font_size": 56,
+            "text_transform": "capitalize",
+            "letter_spacing": 2,
             "background_size": "cover",
-            "parallax_speed": 50,
+            "parallax_speed": 100,
             "fallback_color": "#000000"
           },
           "blocks": {}
