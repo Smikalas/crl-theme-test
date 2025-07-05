@@ -25,7 +25,7 @@
             "text_transform": "capitalize",
             "letter_spacing": 2,
             "background_size": "cover",
-            "parallax_speed": 100,
+            "parallax_speed": 10,
             "fallback_color": "#000000"
           },
           "blocks": {}
