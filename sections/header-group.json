@@ -55,7 +55,7 @@
         "gap_between_elements": 100,
         "color_scheme": "scheme-5",
         "divider_width": 0.5,
-        "icon": "diamond",
+        "icon": "circle",
         "icon_size": 12,
         "icon_color": "#d7d7d7",
         "padding-block-start": 4,
