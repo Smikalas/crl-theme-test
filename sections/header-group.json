@@ -58,8 +58,8 @@
         "icon": "star",
         "icon_size": 10,
         "icon_color": "#d7d7d7",
-        "padding-block-start": 4,
-        "padding-block-end": 4,
+        "padding-block-start": 8,
+        "padding-block-end": 8,
         "padding-inline-start": 0,
         "padding-inline-end": 0
       }
