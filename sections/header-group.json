@@ -37,12 +37,39 @@
             "link": "shopify://pages/contact",
             "text_style": "uppercase"
           }
+        },
+        "announcement_RwGLFX": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": "",
+            "text_style": "body"
+          }
+        },
+        "announcement_fW8xRz": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": "",
+            "text_style": "body"
+          }
+        },
+        "announcement_FyxAVp": {
+          "type": "announcement",
+          "settings": {
+            "text": "Welcome to our store",
+            "link": "",
+            "text_style": "body"
+          }
         }
       },
       "block_order": [
         "announcement_prhqB3",
         "announcement_x3rUXW",
-        "announcement_FmViEc"
+        "announcement_FmViEc",
+        "announcement_RwGLFX",
+        "announcement_fW8xRz",
+        "announcement_FyxAVp"
       ],
       "custom_css": [
         ".announcement-marquee__text {font-weight: bolder;}"
