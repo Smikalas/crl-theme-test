@@ -50,7 +50,7 @@
       "name": "Marquee Announcement",
       "settings": {
         "section_width": "full-width",
-        "movement_direction": "reverse",
+        "movement_direction": "normal",
         "speed": 10,
         "gap_between_elements": 100,
         "color_scheme": "scheme-5",
