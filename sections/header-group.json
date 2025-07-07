@@ -41,7 +41,7 @@
         "announcement_RwGLFX": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
+            "text": "Free shipping on order above 50E",
             "link": "",
             "text_style": "body"
           }
