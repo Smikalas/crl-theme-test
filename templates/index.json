@@ -53,7 +53,7 @@
             "font_weight": "600",
             "padding_vertical": 15,
             "padding_horizontal": 30,
-            "border_width": 3,
+            "border_width": 2,
             "border_color": "#dde8ed",
             "border_hover_color": "#dde8ed",
             "border_radius": 0,
