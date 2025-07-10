@@ -110,7 +110,7 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#0c1316",
+          "background": "#0b1417",
           "foreground_heading": "#ffffff",
           "foreground": "#fdfdfd",
           "primary": "#000000",
@@ -149,7 +149,7 @@
       },
       "scheme-2": {
         "settings": {
-          "background": "#211d1e",
+          "background": "#4f4f4f",
           "foreground_heading": "#000000",
           "foreground": "#ffffff",
           "primary": "#000000",
