@@ -29,47 +29,11 @@
             "link": "shopify://blogs/news",
             "text_style": "body"
           }
-        },
-        "announcement_FmViEc": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": "shopify://pages/contact",
-            "text_style": "uppercase"
-          }
-        },
-        "announcement_RwGLFX": {
-          "type": "announcement",
-          "settings": {
-            "text": "Free shipping on order above 50E",
-            "link": "",
-            "text_style": "body"
-          }
-        },
-        "announcement_fW8xRz": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": "",
-            "text_style": "body"
-          }
-        },
-        "announcement_FyxAVp": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": "",
-            "text_style": "body"
-          }
         }
       },
       "block_order": [
         "announcement_prhqB3",
-        "announcement_x3rUXW",
-        "announcement_FmViEc",
-        "announcement_RwGLFX",
-        "announcement_fW8xRz",
-        "announcement_FyxAVp"
+        "announcement_x3rUXW"
       ],
       "custom_css": [
         ".announcement-marquee__text {font-weight: bolder;}"
