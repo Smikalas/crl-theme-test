@@ -299,43 +299,6 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "accordion_row_3GVLWn": {
-                  "type": "_accordion-row",
-                  "settings": {
-                    "heading": "Return policy",
-                    "open_by_default": true
-                  },
-                  "blocks": {
-                    "text_LwXxzU": {
-                      "type": "text",
-                      "settings": {
-                        "text": "<p>Our goal is for every customer to be totally satisfied with their purchase. If this isn't the case, let us know and we'll do our best to work with you to make it right.</p>",
-                        "width": "100%",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "text_LwXxzU"
-                  ]
-                },
                 "accordion_row_AGt3Pp": {
                   "type": "_accordion-row",
                   "settings": {
@@ -412,7 +375,6 @@
                 }
               },
               "block_order": [
-                "accordion_row_3GVLWn",
                 "accordion_row_AGt3Pp",
                 "accordion_row_PHtN6G"
               ]
