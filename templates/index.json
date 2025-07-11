@@ -121,8 +121,8 @@
             "overlay_opacity": 0.3,
             "overlay_opacity_hover": 0.4,
             "text": "Discover More",
-            "text_color": "#ffffff",
-            "text_size": 32,
+            "text_color": "#efe9e7",
+            "text_size": 44,
             "text_size_mobile": 24,
             "text_weight": "700",
             "link": ""
@@ -142,8 +142,8 @@
             "overlay_opacity": 0.3,
             "overlay_opacity_hover": 0.5,
             "text": "Discover More",
-            "text_color": "#ffffff",
-            "text_size": 32,
+            "text_color": "#efe9e7",
+            "text_size": 44,
             "text_size_mobile": 24,
             "text_weight": "600",
             "link": ""
