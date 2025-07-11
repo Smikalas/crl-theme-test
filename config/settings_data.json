@@ -110,9 +110,9 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#ffffff",
+          "background": "#0a0903",
           "foreground_heading": "#ffffff",
-          "foreground": "#000000",
+          "foreground": "#f7efef",
           "primary": "#000000",
           "primary_hover": "#000000",
           "border": "#00000030",
