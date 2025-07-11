@@ -110,9 +110,9 @@
     "color_schemes": {
       "scheme-1": {
         "settings": {
-          "background": "#e0e0e0",
+          "background": "#0a0903",
           "foreground_heading": "#ffffff",
-          "foreground": "#000000",
+          "foreground": "#ffffff",
           "primary": "#000000",
           "primary_hover": "#000000",
           "border": "#00000030",
@@ -149,9 +149,9 @@
       },
       "scheme-2": {
         "settings": {
-          "background": "#333333",
+          "background": "#efe9e7",
           "foreground_heading": "#000000",
-          "foreground": "#ffffff",
+          "foreground": "#000000",
           "primary": "#000000",
           "primary_hover": "#000000",
           "border": "#e1e1e1",
