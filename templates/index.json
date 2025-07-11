@@ -120,11 +120,11 @@
             "overlay_color": "#1c1c1c",
             "overlay_opacity": 0.3,
             "overlay_opacity_hover": 0.4,
-            "text": "Discover More",
+            "text": "DISCOVER",
             "text_color": "#efe9e7",
             "text_size": 44,
             "text_size_mobile": 24,
-            "text_weight": "700",
+            "text_weight": "400",
             "link": ""
           },
           "blocks": {}
@@ -141,11 +141,11 @@
             "overlay_color": "#000000",
             "overlay_opacity": 0.3,
             "overlay_opacity_hover": 0.5,
-            "text": "Discover More",
+            "text": "DISCOVER",
             "text_color": "#efe9e7",
             "text_size": 44,
             "text_size_mobile": 24,
-            "text_weight": "600",
+            "text_weight": "400",
             "link": ""
           },
           "blocks": {}
