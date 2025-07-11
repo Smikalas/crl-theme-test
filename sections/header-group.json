@@ -128,7 +128,7 @@
         "enable_transparent_header_home": true,
         "home_color_scheme": "default",
         "enable_transparent_header_product": true,
-        "product_color_scheme": "default",
+        "product_color_scheme": "inverse",
         "enable_transparent_header_collection": true,
         "collection_color_scheme": "default"
       }

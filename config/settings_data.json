@@ -307,7 +307,7 @@
         "settings": {
           "background": "rgba(0,0,0,0)",
           "foreground_heading": "#ffffff",
-          "foreground": "#ffffff",
+          "foreground": "#0a0903",
           "primary": "#ffffff",
           "primary_hover": "#acacac",
           "border": "rgba(0,0,0,0)",
