@@ -12,19 +12,29 @@
     "hero_ATpyG8": {
       "type": "hero",
       "blocks": {
-        "ai_gen_block_452b847_mRbCC7": {
-          "type": "ai_gen_block_452b847",
-          "name": "Parallax Image Heading",
+        "text_jgUmHJ": {
+          "type": "text",
+          "name": "t:names.heading",
           "settings": {
-            "heading_text": "Parallax Heading",
-            "fill_image": "shopify://shop_images/Kita_nuotrauka.png",
-            "font_family": "helvetica_n4",
-            "font_size": 80,
-            "text_transform": "none",
-            "letter_spacing": -5,
-            "background_size": "contain",
-            "parallax_speed": 30,
-            "fallback_color": "#000000"
+            "text": "<h2>NEW COLLECTION OUT NOW!</h2>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": true,
+            "background_color": "#00000026",
+            "corner_radius": 17,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         },
@@ -61,7 +71,7 @@
         }
       },
       "block_order": [
-        "ai_gen_block_452b847_mRbCC7",
+        "text_jgUmHJ",
         "ai_gen_block_1e7f907_ARNzRh"
       ],
       "custom_css": [],
