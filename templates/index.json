@@ -61,11 +61,11 @@
             "margin": 20,
             "animation_type": "glow",
             "animation_color": "#ffffff",
-            "show_icon": false,
-            "icon_type": "star",
+            "show_icon": true,
+            "icon_type": "arrow",
             "icon_size": 20,
-            "icon_spacing": 14,
-            "icon_animation": "pulse"
+            "icon_spacing": 10,
+            "icon_animation": "rotate"
           },
           "blocks": {}
         }
