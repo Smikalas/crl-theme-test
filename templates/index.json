@@ -12,29 +12,19 @@
     "hero_ATpyG8": {
       "type": "hero",
       "blocks": {
-        "text_fYUetM": {
-          "type": "text",
-          "name": "t:names.heading",
+        "ai_gen_block_452b847_mRbCC7": {
+          "type": "ai_gen_block_452b847",
+          "name": "Parallax Image Heading",
           "settings": {
-            "text": "<h2>New arrivals</h2>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "rte",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "heading_text": "Parallax Heading",
+            "fill_image": "shopify://shop_images/kitss.png",
+            "font_family": "helvetica_n4",
+            "font_size": 80,
+            "text_transform": "none",
+            "letter_spacing": -5,
+            "background_size": "contain",
+            "parallax_speed": 30,
+            "fallback_color": "#000000"
           },
           "blocks": {}
         },
@@ -71,7 +61,7 @@
         }
       },
       "block_order": [
-        "text_fYUetM",
+        "ai_gen_block_452b847_mRbCC7",
         "ai_gen_block_1e7f907_ARNzRh"
       ],
       "custom_css": [],
