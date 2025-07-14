@@ -74,11 +74,11 @@
 
   @media screen and (max-width: 768px) {
     .ai-parallax-heading-text-{{ ai_gen_id }} {
-      font-size: {{ block.settings.font_size | times: 0.7 }}px;
+      font-size: {{ block.settings.mobile_font_size }}px;
       background-attachment: scroll;
     }
     .ai-parallax-heading-fallback-{{ ai_gen_id }} {
-      font-size: {{ block.settings.font_size | times: 0.7 }}px;
+      font-size: {{ block.settings.mobile_font_size }}px;
     }
   }
 {% endstyle %}
@@ -198,6 +198,17 @@
       "unit": "px",
       "label": "Font size",
       "default": 80
+    },
+    {
+      "type": "range",
+      "id": "mobile_font_size",
+      "min": 16,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Mobile font size",
+      "default": 40,
+      "info": "Font size for mobile devices (screen width < 768px)"
     },
     {
       "type": "select",
