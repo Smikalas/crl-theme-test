@@ -20,8 +20,10 @@
           "settings": {
             "heading_text": "Be a part of our community",
             "fill_image": "shopify://shop_images/preview_59a47158-8ff3-4f52-b83e-14d2d29a3ab4.jpg",
+            "text_alignment": "center",
             "font_family": "geist_n6",
             "font_size": 56,
+            "mobile_font_size": 32,
             "text_transform": "capitalize",
             "letter_spacing": 2,
             "background_size": "cover",
