@@ -9,12 +9,14 @@
   .ai-parallax-heading-{{ ai_gen_id }} {
     position: relative;
     overflow: hidden;
-    display: inline-block;
+    display: block;
     margin: 0;
     padding: 0;
+    text-align: {{ block.settings.text_alignment }};
   }
 
   .ai-parallax-heading-text-{{ ai_gen_id }} {
+    display: inline-block;
     font-family: {{ block.settings.font_family.family }}, {{ block.settings.font_family.fallback_families }};
     font-weight: {{ block.settings.font_family.weight }};
     font-size: {{ block.settings.font_size }}px;
@@ -160,6 +162,26 @@
     {
       "type": "header",
       "content": "Typography"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
     },
     {
       "type": "font_picker",
