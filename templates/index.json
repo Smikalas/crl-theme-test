@@ -1011,8 +1011,8 @@
           "name": "Before After Slider",
           "settings": {
             "before_image": "shopify://shop_images/Alc_materials.png",
-            "after_image": "shopify://shop_images/alcantara_rubyred.png",
-            "aspect_ratio": 40,
+            "after_image": "shopify://shop_images/Alc_materials.png",
+            "aspect_ratio": 55,
             "initial_position": 50,
             "slider_color": "#ffffff",
             "handle_size": 30,
