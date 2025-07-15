@@ -1071,7 +1071,7 @@
       "type": "image-disintegration",
       "name": "Image Disintegration",
       "settings": {
-        "default_image": "shopify://shop_images/backnigh.png"
+        "default_image": "shopify://shop_images/Alc_materials.png"
       }
     }
   },
