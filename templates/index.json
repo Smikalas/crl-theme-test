@@ -1012,7 +1012,7 @@
           "settings": {
             "before_image": "shopify://shop_images/Alc_materials.png",
             "after_image": "shopify://shop_images/backnigh.png",
-            "aspect_ratio": 50,
+            "aspect_ratio": 45,
             "initial_position": 50,
             "slider_color": "#f7efef",
             "handle_size": 30,
