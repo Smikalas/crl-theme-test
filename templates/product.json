@@ -474,7 +474,7 @@
             "slider_color": "#ffffff",
             "handle_size": 30,
             "handle_arrow_color": "#000000",
-            "show_labels": true,
+            "show_labels": false,
             "before_label": "Before",
             "after_label": "After",
             "label_position": 20,
