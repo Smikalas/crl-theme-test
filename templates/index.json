@@ -1015,7 +1015,7 @@
             "aspect_ratio": 45,
             "initial_position": 50,
             "slider_color": "#f7efef",
-            "handle_size": 30,
+            "handle_size": 44,
             "handle_arrow_color": "#000000",
             "show_labels": false,
             "before_label": "Before",
