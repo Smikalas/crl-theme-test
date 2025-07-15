@@ -133,14 +133,24 @@
   }
 
   .ai-heading-{{ ai_gen_id }} {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    margin: 0 0 20px 0;
-    padding: 0;
+    margin: 0;
+    padding: 5px 15px;
     color: {{ block.settings.heading_color }};
     font-size: {{ block.settings.heading_size }}px;
     font-weight: {{ block.settings.heading_weight }};
-    display: block;
-    width: 100%;
+    z-index: 4;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+    white-space: nowrap;
+    max-width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 {% endstyle %}
 
@@ -148,11 +158,11 @@
   class="ai-before-after-{{ ai_gen_id }}"
   {{ block.shopify_attributes }}
 >
-  {% if block.settings.heading != blank %}
-    <h2 class="ai-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
-  {% endif %}
   <div class="ai-aspect-ratio-{{ ai_gen_id }}">
     <div class="ai-before-after-container-{{ ai_gen_id }}">
+      {% if block.settings.heading != blank %}
+        <h2 class="ai-heading-{{ ai_gen_id }}">{{ block.settings.heading }}</h2>
+      {% endif %}
       {% if block.settings.before_image %}
         <img
           src="{{ block.settings.before_image | image_url: width: 2000 }}"
