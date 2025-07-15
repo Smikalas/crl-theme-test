@@ -211,43 +211,64 @@
     class BeforeAfterSlider{{ ai_gen_id }} extends HTMLElement {
       constructor() {
         super();
+        this.boundStartDrag = this.startDrag.bind(this);
+        this.boundDrag = this.drag.bind(this);
+        this.boundStopDrag = this.stopDrag.bind(this);
+        this.boundUpdateSliderPosition = this.updateSliderPosition.bind(this);
+      }
+
+      connectedCallback() {
         this.container = this.querySelector('.ai-before-after-container-{{ ai_gen_id }}');
         this.slider = this.querySelector('.ai-before-after-slider-{{ ai_gen_id }}');
         this.handle = this.querySelector('.ai-slider-handle-{{ ai_gen_id }}');
         this.initialPosition = {{ block.settings.initial_position }};
         this.isDragging = false;
-        this.container.style.setProperty('--position', `${this.initialPosition}%`);
-      }
 
-      connectedCallback() {
-        this.handle.addEventListener('mousedown', this.startDrag.bind(this));
-        this.handle.addEventListener('touchstart', this.startDrag.bind(this), { passive: false });
-        document.addEventListener('mousemove', this.drag.bind(this));
-        document.addEventListener('touchmove', this.drag.bind(this), { passive: false });
-        document.addEventListener('mouseup', this.stopDrag.bind(this));
-        document.addEventListener('touchend', this.stopDrag.bind(this));
-        window.addEventListener('resize', this.updateSliderPosition.bind(this));
+        // Set initial position
+        this.updateSliderPosition(this.initialPosition);
+
+        // Add event listeners
+        this.handle.addEventListener('mousedown', this.boundStartDrag);
+        this.handle.addEventListener('touchstart', this.boundStartDrag, { passive: false });
+        document.addEventListener('mousemove', this.boundDrag);
+        document.addEventListener('touchmove', this.boundDrag, { passive: false });
+        document.addEventListener('mouseup', this.boundStopDrag);
+        document.addEventListener('touchend', this.boundStopDrag);
+        window.addEventListener('resize', this.boundUpdateSliderPosition);
+
+        // Add click event for direct position update
+        this.container.addEventListener('click', (e) => {
+          if (e.target === this.handle) return;
+          const rect = this.container.getBoundingClientRect();
+          const position = ((e.clientX - rect.left) / rect.width) * 100;
+          this.updateSliderPosition(position);
+        });
       }
 
       disconnectedCallback() {
-        this.handle.removeEventListener('mousedown', this.startDrag.bind(this));
-        this.handle.removeEventListener('touchstart', this.startDrag.bind(this));
-        document.removeEventListener('mousemove', this.drag.bind(this));
-        document.removeEventListener('touchmove', this.drag.bind(this));
-        document.removeEventListener('mouseup', this.stopDrag.bind(this));
-        document.removeEventListener('touchend', this.stopDrag.bind(this));
-        window.removeEventListener('resize', this.updateSliderPosition.bind(this));
+        this.handle.removeEventListener('mousedown', this.boundStartDrag);
+        this.handle.removeEventListener('touchstart', this.boundStartDrag);
+        document.removeEventListener('mousemove', this.boundDrag);
+        document.removeEventListener('touchmove', this.boundDrag);
+        document.removeEventListener('mouseup', this.boundStopDrag);
+        document.removeEventListener('touchend', this.boundStopDrag);
+        window.removeEventListener('resize', this.boundUpdateSliderPosition);
       }
 
       startDrag(e) {
-        e.preventDefault();
+        if (e.cancelable) {
+          e.preventDefault();
+        }
         this.isDragging = true;
         this.container.classList.add('dragging');
       }
 
       drag(e) {
         if (!this.isDragging) return;
-        e.preventDefault();
+        
+        if (e.cancelable) {
+          e.preventDefault();
+        }
         
         const containerRect = this.container.getBoundingClientRect();
         const containerWidth = containerRect.width;
@@ -262,7 +283,9 @@
         let position = ((clientX - containerRect.left) / containerWidth) * 100;
         position = Math.min(Math.max(position, 0), 100);
         
-        this.updateSliderPosition(position);
+        requestAnimationFrame(() => {
+          this.updateSliderPosition(position);
+        });
       }
 
       stopDrag() {
@@ -274,11 +297,15 @@
         if (typeof position !== 'number') {
           position = this.initialPosition;
         }
+        position = Math.min(Math.max(position, 0), 100);
         this.container.style.setProperty('--position', `${position}%`);
+        this.slider.style.left = `${position}%`;
       }
     }
 
-    customElements.define('before-after-slider-{{ ai_gen_id }}', BeforeAfterSlider{{ ai_gen_id }});
+    if (!customElements.get('before-after-slider-{{ ai_gen_id }}')) {
+      customElements.define('before-after-slider-{{ ai_gen_id }}', BeforeAfterSlider{{ ai_gen_id }});
+    }
   })();
 </script>
 
