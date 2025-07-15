@@ -1019,7 +1019,7 @@
             "before_image": "shopify://shop_images/Alc_materials.png",
             "after_image": "shopify://shop_images/backnigh.png",
             "aspect_ratio": 40,
-            "mobile_aspect_ratio": 60,
+            "mobile_aspect_ratio": 95,
             "initial_position": 50,
             "slider_color": "#f7efef",
             "handle_size": 44,
