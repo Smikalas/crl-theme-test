@@ -1011,7 +1011,7 @@
           "name": "Before After Slider",
           "settings": {
             "heading": "Before & After Comparison",
-            "heading_size": 24,
+            "heading_size": 26,
             "heading_weight": "600",
             "heading_color": "#000000",
             "before_image": "shopify://shop_images/Alc_materials.png",
