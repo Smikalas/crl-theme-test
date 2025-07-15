@@ -21,6 +21,12 @@
     overflow: hidden;
   }
 
+  @media screen and (max-width: 749px) {
+    .ai-aspect-ratio-{{ ai_gen_id }} {
+      padding-bottom: {{ block.settings.mobile_aspect_ratio }}%;
+    }
+  }
+
   .ai-before-after-container-{{ ai_gen_id }} {
     position: absolute;
     top: 0;
@@ -151,6 +157,14 @@
     max-width: 90%;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.mobile_heading_size }}px;
+      top: {{ block.settings.mobile_heading_position }}px;
+      padding: 4px 12px;
+    }
   }
 {% endstyle %}
 
@@ -328,8 +342,28 @@
       "max": 60,
       "step": 2,
       "unit": "px",
-      "label": "Heading size",
+      "label": "Heading size (desktop)",
       "default": 28
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_size",
+      "min": 14,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading size (mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "mobile_heading_position",
+      "min": 10,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Heading position from top (mobile)",
+      "default": 15
     },
     {
       "type": "select",
@@ -382,9 +416,20 @@
       "max": 100,
       "step": 5,
       "unit": "%",
-      "label": "Aspect ratio",
+      "label": "Aspect ratio (desktop)",
       "default": 75,
       "info": "Sets the height relative to width"
+    },
+    {
+      "type": "range",
+      "id": "mobile_aspect_ratio",
+      "min": 40,
+      "max": 150,
+      "step": 5,
+      "unit": "%",
+      "label": "Aspect ratio (mobile)",
+      "default": 100,
+      "info": "Sets the height relative to width on mobile devices"
     },
     {
       "type": "header",
