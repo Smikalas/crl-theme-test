@@ -1005,6 +1005,32 @@
     },
     "section_iNymGd": {
       "type": "section",
+      "blocks": {
+        "ai_gen_block_ff6f663_GzLwEE": {
+          "type": "ai_gen_block_ff6f663",
+          "name": "Before After Slider",
+          "settings": {
+            "before_image": "shopify://shop_images/Alc_materials.png",
+            "after_image": "shopify://shop_images/alcantara_rubyred.png",
+            "aspect_ratio": 40,
+            "initial_position": 50,
+            "slider_color": "#ffffff",
+            "handle_size": 30,
+            "handle_arrow_color": "#000000",
+            "show_labels": true,
+            "before_label": "Before",
+            "after_label": "After",
+            "label_position": 20,
+            "label_size": 14,
+            "label_color": "#ffffff",
+            "label_background": "#000000"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ff6f663_GzLwEE"
+      ],
       "name": "t:names.custom_section",
       "settings": {
         "content_direction": "column",
@@ -1018,7 +1044,7 @@
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
