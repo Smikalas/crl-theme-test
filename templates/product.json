@@ -468,7 +468,7 @@
             "heading_color": "#000000",
             "before_image": "shopify://shop_images/Alc_materials.png",
             "after_image": "shopify://shop_images/3.png",
-            "aspect_ratio": 40,
+            "aspect_ratio": 45,
             "mobile_aspect_ratio": 100,
             "initial_position": 50,
             "slider_color": "#ffffff",
