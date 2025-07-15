@@ -471,7 +471,7 @@
             "aspect_ratio": 45,
             "mobile_aspect_ratio": 100,
             "initial_position": 50,
-            "slider_color": "#ffffff",
+            "slider_color": "#efe9e7",
             "handle_size": 30,
             "handle_arrow_color": "#000000",
             "show_labels": false,
