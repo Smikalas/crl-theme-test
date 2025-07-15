@@ -1020,10 +1020,10 @@
             "show_labels": true,
             "before_label": "Before",
             "after_label": "After",
-            "label_position": 20,
-            "label_size": 14,
+            "label_position": 45,
+            "label_size": 17,
             "label_color": "#ffffff",
-            "label_background": "#000000"
+            "label_background": "#0a0903"
           },
           "blocks": {}
         }
