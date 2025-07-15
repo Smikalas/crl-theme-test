@@ -1,44 +1,69 @@
 {%- style -%}
   .disintegration-section {
     width: 100%;
-    height: 300vh;
+    height: 100vh;
     position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
   }
 
   .capture-canvas {
-    position: fixed;
+    position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
+    pointer-events: none;
   }
 
   #capture {
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
     width: 600px;
     height: 400px;
+    margin: 3rem 0;
   }
 
   #capture img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: inline-block;
+    display: block;
+    border-radius: 8px;
   }
 
   .image-upload-container {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 100;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+
+  .custom-file-upload {
+    display: inline-block;
+    padding: 12px 24px;
+    background: rgb(var(--color-button));
+    color: rgb(var(--color-button-text));
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.6rem;
+    transition: background 0.3s ease;
+  }
+
+  .custom-file-upload:hover {
+    background: rgba(var(--color-button), 0.8);
+  }
+
+  #imageUpload {
+    display: none;
   }
 {%- endstyle -%}
 
 <div class="disintegration-section page-width">
   <div class="image-upload-container">
+    <label for="imageUpload" class="custom-file-upload">
+      Choose an Image
+    </label>
     <input type="file" id="imageUpload" accept="image/*">
   </div>
   
@@ -118,16 +143,18 @@
         let clonedCanvas = canvas.cloneNode();
         clonedCanvas.getContext("2d").putImageData(data, 0, 0);
         clonedCanvas.className = "capture-canvas";
-        document.body.appendChild(clonedCanvas);
+        captureEl.parentElement.appendChild(clonedCanvas);
 
         const randomAngle = (Math.random() - 0.5) * 2 * Math.PI;
         const randomRotationAngle = 30 * (Math.random() - 0.5);
 
         let tl = gsap.timeline({
           scrollTrigger: {
+            trigger: captureEl.parentElement,
             scrub: 1,
-            start: () => 0,
-            end: () => window.innerHeight * 2
+            start: "top top",
+            end: "bottom bottom",
+            markers: false
           }
         });
 
