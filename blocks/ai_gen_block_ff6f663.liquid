@@ -10,15 +10,23 @@
     position: relative;
     width: 100%;
     max-width: 100%;
-    overflow: hidden;
     margin: 0 auto;
+    display: block;
+  }
+
+  .ai-aspect-ratio-{{ ai_gen_id }} {
+    position: relative;
+    padding-bottom: {{ block.settings.aspect_ratio }}%;
+    height: 0;
+    overflow: hidden;
   }
 
   .ai-before-after-container-{{ ai_gen_id }} {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
   }
 
   .ai-before-image-{{ ai_gen_id }},
@@ -33,7 +41,7 @@
 
   .ai-before-image-{{ ai_gen_id }} {
     z-index: 1;
-    clip-path: polygon(0% 0%, var(--position) 0%, var(--position) 100%, 0% 100%);
+    clip-path: polygon(0% 0%, var(--position, 50%) 0%, var(--position, 50%) 100%, 0% 100%);
   }
 
   .ai-after-image-{{ ai_gen_id }} {
@@ -43,7 +51,7 @@
   .ai-before-after-slider-{{ ai_gen_id }} {
     position: absolute;
     top: 0;
-    left: var(--position);
+    left: 50%;
     width: 2px;
     height: 100%;
     background-color: {{ block.settings.slider_color }};
@@ -81,39 +89,8 @@
   }
 
   .ai-slider-handle-{{ ai_gen_id }}::after {
-    left: calc(50% - 8px);
-    transform: translateY(-50%) rotate(45deg);
-  }
-
-  .ai-slider-handle-{{ ai_gen_id }}::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: calc(50% - 8px);
-    width: 6px;
-    height: 2px;
-    background-color: {{ block.settings.handle_arrow_color }};
-    transform: translateY(-50%) rotate(-45deg);
-  }
-
-  .ai-slider-handle-{{ ai_gen_id }}::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: calc(50% - 8px);
-    width: 6px;
-    height: 2px;
-    background-color: {{ block.settings.handle_arrow_color }};
-    transform: translateY(-50%) rotate(45deg);
-  }
-
-  .ai-slider-handle-{{ ai_gen_id }}::before {
-    left: calc(50% - 8px);
-  }
-
-  .ai-slider-handle-{{ ai_gen_id }}::after {
     left: calc(50% + 2px);
-    transform: translateY(-50%) rotate(-45deg);
+    transform: translateY(-50%) rotate(45deg);
   }
 
   .ai-image-labels-{{ ai_gen_id }} {
@@ -139,6 +116,7 @@
   }
 
   .ai-image-placeholder-{{ ai_gen_id }} {
+    position: absolute;
     width: 100%;
     height: 100%;
     display: flex;
@@ -152,11 +130,6 @@
     height: 100%;
     max-width: 500px;
     max-height: 500px;
-  }
-
-  .ai-aspect-ratio-{{ ai_gen_id }} {
-    position: relative;
-    padding-bottom: {{ block.settings.aspect_ratio }}%;
   }
 {% endstyle %}
 
