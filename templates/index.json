@@ -1067,11 +1067,11 @@
         "padding-block-end": 0
       }
     },
-    "image_disintegration_rG3PjA": {
+    "image_disintegration_ccVKVB": {
       "type": "image-disintegration",
       "name": "Image Disintegration",
       "settings": {
-        "default_image": "shopify://shop_images/Alc_materials.png"
+        "default_image": "shopify://shop_images/backnigh.png"
       }
     }
   },
@@ -1082,6 +1082,6 @@
     "section_cYETnM",
     "section_rDp3Hb",
     "section_iNymGd",
-    "image_disintegration_rG3PjA"
+    "image_disintegration_ccVKVB"
   ]
 }
