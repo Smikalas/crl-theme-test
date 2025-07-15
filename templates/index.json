@@ -1011,19 +1011,19 @@
           "name": "Before After Slider",
           "settings": {
             "before_image": "shopify://shop_images/Alc_materials.png",
-            "after_image": "shopify://shop_images/alcantara_rubyred.png",
-            "aspect_ratio": 40,
+            "after_image": "shopify://shop_images/backnigh.png",
+            "aspect_ratio": 45,
             "initial_position": 50,
-            "slider_color": "#ffffff",
+            "slider_color": "#f7efef",
             "handle_size": 30,
             "handle_arrow_color": "#000000",
-            "show_labels": true,
+            "show_labels": false,
             "before_label": "Before",
             "after_label": "After",
-            "label_position": 20,
-            "label_size": 14,
+            "label_position": 45,
+            "label_size": 17,
             "label_color": "#ffffff",
-            "label_background": "#000000"
+            "label_background": "#0a0903"
           },
           "blocks": {}
         }
