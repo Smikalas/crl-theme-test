@@ -1,0 +1,175 @@
+{%- style -%}
+  .disintegration-section {
+    width: 100%;
+    height: 300vh;
+    position: relative;
+  }
+
+  .capture-canvas {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #capture {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 400px;
+  }
+
+  #capture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: inline-block;
+  }
+
+  .image-upload-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+  }
+{%- endstyle -%}
+
+<div class="disintegration-section page-width">
+  <div class="image-upload-container">
+    <input type="file" id="imageUpload" accept="image/*">
+  </div>
+  
+  <div id="capture">
+    {%- if section.settings.default_image != blank -%}
+      {{ section.settings.default_image | image_url: width: 600 | image_tag: loading: 'lazy', height: 400, width: 600 }}
+    {%- endif -%}
+  </div>
+</div>
+
+{%- schema -%}
+{
+  "name": "Image Disintegration",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "default_image",
+      "label": "Default Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Disintegration"
+    }
+  ]
+}
+{%- endschema -%}
+
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/html2canvas@1.0.0-rc.5/dist/html2canvas.js"></script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  const COUNT = 75;
+  const REPEAT_COUNT = 3;
+  const capture = document.querySelector("#capture");
+  let currentAnimation = null;
+
+  function createCanvases(captureEl) {
+    // Remove any existing canvas elements
+    document.querySelectorAll('.capture-canvas').forEach(canvas => canvas.remove());
+    
+    html2canvas(captureEl).then((canvas) => {
+      const width = canvas.width;
+      const height = canvas.height;
+      const ctx = canvas.getContext("2d");
+      const imageData = ctx.getImageData(0, 0, width, height);
+      let dataList = [];
+
+      for (let i = 0; i < COUNT; i++) {
+        dataList.push(ctx.createImageData(width, height));
+      }
+
+      for (let x = 0; x < width; x++) {
+        for (let y = 0; y < height; y++) {
+          for (let l = 0; l < REPEAT_COUNT; l++) {
+            const index = (x + y * width) * 4;
+            const dataIndex = Math.floor(
+              (COUNT * (Math.random() + (2 * x) / width)) / 3
+            );
+            for (let p = 0; p < 4; p++) {
+              dataList[dataIndex].data[index + p] = imageData.data[index + p];
+            }
+          }
+        }
+      }
+
+      // Kill previous animation if it exists
+      if (currentAnimation) {
+        currentAnimation.kill();
+      }
+
+      dataList.forEach((data, i) => {
+        let clonedCanvas = canvas.cloneNode();
+        clonedCanvas.getContext("2d").putImageData(data, 0, 0);
+        clonedCanvas.className = "capture-canvas";
+        document.body.appendChild(clonedCanvas);
+
+        const randomAngle = (Math.random() - 0.5) * 2 * Math.PI;
+        const randomRotationAngle = 30 * (Math.random() - 0.5);
+
+        let tl = gsap.timeline({
+          scrollTrigger: {
+            scrub: 1,
+            start: () => 0,
+            end: () => window.innerHeight * 2
+          }
+        });
+
+        tl.to(clonedCanvas, {
+          duration: 1,
+          rotate: randomRotationAngle,
+          translateX: 40 * Math.sin(randomAngle),
+          translateY: 40 * Math.cos(randomAngle),
+          opacity: 0,
+          delay: (i / dataList.length) * 2
+        });
+
+        currentAnimation = tl;
+      });
+    });
+  }
+
+  // Handle image upload
+  document.getElementById('imageUpload').addEventListener('change', function(e) {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        const img = document.createElement('img');
+        img.src = event.target.result;
+        img.onload = function() {
+          // Clear the capture div and add the new image
+          capture.innerHTML = '';
+          capture.appendChild(img);
+          // Initialize the effect with the new image
+          createCanvases(capture);
+        };
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+
+  // Initialize with default image if present
+  const images = gsap.utils.toArray("#capture img");
+  if (images.length > 0) {
+    imagesLoaded(images).on("always", () => {
+      createCanvases(capture);
+    });
+  }
+</script>
