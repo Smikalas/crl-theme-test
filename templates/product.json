@@ -455,11 +455,40 @@
             "image_border_radius": 12
           },
           "blocks": {}
+        },
+        "ai_gen_block_ff6f663_BetbEx": {
+          "type": "ai_gen_block_ff6f663",
+          "name": "Before After Slider",
+          "settings": {
+            "heading": "Before & After Comparison",
+            "heading_size": 28,
+            "mobile_heading_size": 20,
+            "mobile_heading_position": 15,
+            "heading_weight": "600",
+            "heading_color": "#000000",
+            "before_image": "shopify://shop_images/Alc_materials.png",
+            "after_image": "shopify://shop_images/3.png",
+            "aspect_ratio": 45,
+            "mobile_aspect_ratio": 100,
+            "initial_position": 50,
+            "slider_color": "#ffffff",
+            "handle_size": 30,
+            "handle_arrow_color": "#000000",
+            "show_labels": true,
+            "before_label": "Before",
+            "after_label": "After",
+            "label_position": 20,
+            "label_size": 14,
+            "label_color": "#ffffff",
+            "label_background": "#000000"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "ai_gen_block_b3dd954_ap6ypf",
-        "ai_gen_block_b3dd954_3YmmgE"
+        "ai_gen_block_b3dd954_3YmmgE",
+        "ai_gen_block_ff6f663_BetbEx"
       ],
       "custom_css": [],
       "settings": {
