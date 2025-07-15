@@ -1066,6 +1066,13 @@
         "padding-block-start": 0,
         "padding-block-end": 0
       }
+    },
+    "image_disintegration_rG3PjA": {
+      "type": "image-disintegration",
+      "name": "Image Disintegration",
+      "settings": {
+        "default_image": "shopify://shop_images/Alc_materials.png"
+      }
     }
   },
   "order": [
@@ -1074,6 +1081,7 @@
     "section_NgPURa",
     "section_cYETnM",
     "section_rDp3Hb",
-    "section_iNymGd"
+    "section_iNymGd",
+    "image_disintegration_rG3PjA"
   ]
 }
