@@ -105,26 +105,6 @@
         "padding-block-end": 5
       }
     },
-    "gsap_animated_section_g8kWWz": {
-      "type": "gsap-animated-section",
-      "name": "Scroll Animated Section",
-      "settings": {
-        "heading": "Add Your",
-        "subheading": "Announcement or Discount Notifications",
-        "heading_color": "#ff0000"
-      }
-    },
-    "custom_liquid_Efzt46": {
-      "type": "custom-liquid",
-      "name": "t:names.custom_liquid",
-      "settings": {
-        "custom_liquid": "<script>\ngsap.to(\".box\", {\nrotation: 360,\nduration: 2,\n})\n</script>",
-        "color_scheme": "",
-        "section_width": "page-width",
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
-    },
     "section_gdWMnT": {
       "type": "section",
       "blocks": {
@@ -1090,8 +1070,6 @@
   },
   "order": [
     "hero_ATpyG8",
-    "gsap_animated_section_g8kWWz",
-    "custom_liquid_Efzt46",
     "section_gdWMnT",
     "section_NgPURa",
     "section_cYETnM",
