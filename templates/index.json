@@ -1033,19 +1033,10 @@
             "label_background": "#0a0903"
           },
           "blocks": {}
-        },
-        "custom_liquid_JCQbd6": {
-          "type": "custom-liquid",
-          "name": "t:names.custom_liquid",
-          "settings": {
-            "custom_liquid": "<div id=\"wrapper\">\n  <div id=\"content\">\n\n    <div class=\"scroll\">\n      <span>SCROLL</span>\n\n      <svg viewBox=\"0 0 24 24\">\n        <line class=\"st1\" x1=\"12\" y1=\"1\" x2=\"12\" y2=\"22.5\" />\n        <line class=\"st1\" x1=\"12.1\" y1=\"22.4\" x2=\"18.9\" y2=\"15.6\" />\n        <line class=\"st1\" x1=\"11.9\" y1=\"22.4\" x2=\"5.1\" y2=\"15.6\" />\n      </svg>\n\n    </div>\n  </div>\n</div>"
-          },
-          "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_ff6f663_GzLwEE",
-        "custom_liquid_JCQbd6"
+        "ai_gen_block_ff6f663_GzLwEE"
       ],
       "name": "t:names.custom_section",
       "settings": {
