@@ -227,5 +227,15 @@
     }
   </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    gsap.to(".header-logo__image", {
+      rotation: 360,
+      duration: 2,
+      repeat: -1, // Repeat indefinitely
+      ease: "linear" // Smooth rotation
+    });
+  });
+</script>
 
 </html>
