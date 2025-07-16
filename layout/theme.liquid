@@ -227,28 +227,5 @@
     }
   </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const logo = document.querySelector(".header-logo__image");
-
-    gsap.set(logo, { transformStyle: "preserve-3d", transformOrigin: "center" });
-
-    logo.addEventListener("mouseenter", function() {
-      gsap.to(logo, {
-        rotationY: 360,
-        duration: 0.5, // Faster duration for a more pronounced spin
-        ease: "power1.inOut"
-      });
-    });
-
-    logo.addEventListener("mouseleave", function() {
-      gsap.to(logo, {
-        rotationY: 0,
-        duration: 0.5, // Faster duration for a more pronounced spin
-        ease: "power1.inOut"
-      });
-    });
-  });
-</script>
 
 </html>
