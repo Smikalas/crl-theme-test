@@ -4180,7 +4180,7 @@ text-component {
   font-size: 8px;
 }
 
-.header-logo__image {
+.header-logo {
   width: 100px; /* Adjust as needed */
   height: auto;
   transition: transform 0.5s ease-in-out; /* Smooth transition */
