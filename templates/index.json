@@ -109,9 +109,10 @@
       "type": "gsap-animated-section",
       "name": "Scroll Animated Section",
       "settings": {
-        "heading": "Add Your",
+        "heading": "",
         "subheading": "Announcement or Discount Notifications",
-        "heading_color": "#ff0000"
+        "hero_image": "shopify://shop_images/backnigh.png",
+        "heading_color": "#000000"
       }
     },
     "section_gdWMnT": {
