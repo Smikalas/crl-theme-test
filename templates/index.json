@@ -105,6 +105,15 @@
         "padding-block-end": 5
       }
     },
+    "animated_section_tLgck8": {
+      "type": "animated-section",
+      "name": "Scroll Animated Section",
+      "settings": {
+        "heading": "Add Your",
+        "subheading": "Announcement or Discount Notifications",
+        "heading_color": "#ff0000"
+      }
+    },
     "section_gdWMnT": {
       "type": "section",
       "blocks": {
@@ -1070,6 +1079,7 @@
   },
   "order": [
     "hero_ATpyG8",
+    "animated_section_tLgck8",
     "section_gdWMnT",
     "section_NgPURa",
     "section_cYETnM",
