@@ -111,6 +111,7 @@
       "settings": {
         "heading": "Add Your",
         "subheading": "Announcement or Discount Notifications",
+        "hero_image": "shopify://shop_images/Alc_materials.png",
         "heading_color": "#ff0000"
       }
     },
