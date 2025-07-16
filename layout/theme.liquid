@@ -229,11 +229,24 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function() {
-    gsap.to(".header-logo__image", {
-      rotation: 360,
-      duration: 2,
-      repeat: -1, // Repeat indefinitely
-      ease: "linear" // Smooth rotation
+    const logo = document.querySelector(".header-logo__image");
+
+    gsap.set(logo, { transformStyle: "preserve-3d" });
+
+    logo.addEventListener("mouseenter", function() {
+      gsap.to(logo, {
+        rotationY: 360,
+        duration: 1,
+        ease: "power1.inOut"
+      });
+    });
+
+    logo.addEventListener("mouseleave", function() {
+      gsap.to(logo, {
+        rotationY: 0,
+        duration: 1,
+        ease: "power1.inOut"
+      });
     });
   });
 </script>
