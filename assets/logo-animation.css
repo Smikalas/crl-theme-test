@@ -1,0 +1,8 @@
+.header-logo {
+  perspective: 1000px;
+}
+
+.header-logo__image {
+  transform-style: preserve-3d;
+  backface-visibility: visible;
+}

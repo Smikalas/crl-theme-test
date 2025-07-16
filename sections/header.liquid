@@ -255,6 +255,12 @@
   type="module"
 ></script>
 
+<script
+  src="{{ 'logo-animation.js' | asset_url }}"
+  type="module"
+></script>
+{{ 'logo-animation.css' | asset_url | stylesheet_tag }}
+
 {% stylesheet %}
   body {
     --header-height: 0px;
