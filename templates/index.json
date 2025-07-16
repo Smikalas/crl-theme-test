@@ -1033,10 +1033,19 @@
             "label_background": "#0a0903"
           },
           "blocks": {}
+        },
+        "custom_liquid_aHdCCh": {
+          "type": "custom-liquid",
+          "name": "t:names.custom_liquid",
+          "settings": {
+            "custom_liquid": "<div class=\"box\" style=\"width: 100px; height: 100px; background-color: red;\"></div>"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "ai_gen_block_ff6f663_GzLwEE"
+        "ai_gen_block_ff6f663_GzLwEE",
+        "custom_liquid_aHdCCh"
       ],
       "name": "t:names.custom_section",
       "settings": {
