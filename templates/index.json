@@ -109,7 +109,7 @@
       "type": "custom-liquid",
       "name": "t:names.custom_liquid",
       "settings": {
-        "custom_liquid": "<div class=\"box\" style=\"width: 100px; height: 100px; background-color: red;\"></div>\n<script>\n\n<script>  document.addEventListener(\"DOMContentLoaded\", function() {\n    gsap.to(\".box\", {\n      rotation: 360,\n      duration: 2,\n      repeat: -1, // Optional: Repeat the animation indefinitely\n      yoyo: true   // Optional: Reverse the animation on each repeat\n    });\n  });\n</script>",
+        "custom_liquid": "<div class=\"box\" style=\"width: 100px; height: 100px; background-color: green;\"></div>\n<script>",
         "color_scheme": "",
         "section_width": "page-width",
         "padding-block-start": 0,
