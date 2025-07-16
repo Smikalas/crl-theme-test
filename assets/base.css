@@ -4179,11 +4179,3 @@ text-component {
 .menu-drawer__menu-item--mainlist {
   font-size: 8px;
 }
-
-.header-logo {
-  width: 100px; /* Adjust as needed */
-  height: auto;
-  transition: transform 0.5s ease-in-out; /* Smooth transition */
-  transform-style: preserve-3d; /* Enable 3D transformations */
-  transform-origin: center; /* Center the rotation */
-}

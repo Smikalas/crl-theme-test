@@ -227,30 +227,4 @@
     }
   </script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const logo = document.querySelector(".header-logo");
-    
-    // Add null check for logo
-    if (!logo) return;
-
-    gsap.set(logo, { 
-      transformStyle: "preserve-3d", 
-      transformOrigin: "center",
-      perspective: 800 // Added for better 3D effect
-    });
-
-    // Use a timeline for better animation control
-    const tl = gsap.timeline({ paused: true });
-    tl.to(logo, {
-      rotationY: 360,
-      duration: 0.5,
-      ease: "power1.inOut"
-    });
-
-    logo.addEventListener("mouseenter", () => tl.play());
-    logo.addEventListener("mouseleave", () => tl.reverse());
-  });
-</script>
-
 </html>
