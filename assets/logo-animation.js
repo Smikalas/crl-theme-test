@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Create hover animation
   logo.addEventListener('mouseenter', () => {
     gsap.to(logo, {
-      duration: 0.3,
+      duration: 0.6,
       rotationY: 360,
       ease: "power2.inOut"
     });
