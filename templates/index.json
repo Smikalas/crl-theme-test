@@ -1038,7 +1038,7 @@
           "type": "custom-liquid",
           "name": "t:names.custom_liquid",
           "settings": {
-            "custom_liquid": "<div class=\"box\" style=\"width: 100px; height: 100px; background-color: red;\"></div>"
+            "custom_liquid": "<div class=\"box\" style=\"width: 100px; height: 100px; background-color: red; position: center; \"></div>"
           },
           "blocks": {}
         }
