@@ -4181,8 +4181,6 @@ text-component {
 }
 
 .header-logo__image {
-  width: 100px; /* Adjust as needed */
-  height: auto;
   transition: transform 0.5s ease-in-out; /* Smooth transition */
   transform-style: preserve-3d; /* Enable 3D transformations */
 }
