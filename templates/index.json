@@ -105,17 +105,6 @@
         "padding-block-end": 5
       }
     },
-    "custom_liquid_QpjHgz": {
-      "type": "custom-liquid",
-      "name": "t:names.custom_liquid",
-      "settings": {
-        "custom_liquid": "<div class=\"box\" style=\"width: 100px; height: 100px; background-color: red;\"></div>\n<script>\n\n<script>  document.addEventListener(\"DOMContentLoaded\", function() {\n    gsap.to(\".box\", {\n      rotation: 360,\n      duration: 2,\n      repeat: -1, // Optional: Repeat the animation indefinitely\n      yoyo: true   // Optional: Reverse the animation on each repeat\n    });\n  });\n</script>",
-        "color_scheme": "",
-        "section_width": "page-width",
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
-    },
     "section_gdWMnT": {
       "type": "section",
       "blocks": {
@@ -1081,7 +1070,6 @@
   },
   "order": [
     "hero_ATpyG8",
-    "custom_liquid_QpjHgz",
     "section_gdWMnT",
     "section_NgPURa",
     "section_cYETnM",
