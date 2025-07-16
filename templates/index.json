@@ -105,14 +105,13 @@
         "padding-block-end": 5
       }
     },
-    "gsap_animated_section_Rpnbr8": {
+    "gsap_animated_section_g8kWWz": {
       "type": "gsap-animated-section",
       "name": "Scroll Animated Section",
       "settings": {
-        "heading": "",
+        "heading": "Add Your",
         "subheading": "Announcement or Discount Notifications",
-        "hero_image": "shopify://shop_images/DALL_E_2025-03-13_20.04.20_-_A_large_sleek_white_paper_cup_filled_with_a_vibrant_purple_drink_splashing_out_dramatically._Above_the_cup_numerous_pills_of_different_shapes_and_c.webp",
-        "heading_color": "#000000"
+        "heading_color": "#ff0000"
       }
     },
     "section_gdWMnT": {
@@ -1080,7 +1079,7 @@
   },
   "order": [
     "hero_ATpyG8",
-    "gsap_animated_section_Rpnbr8",
+    "gsap_animated_section_g8kWWz",
     "section_gdWMnT",
     "section_NgPURa",
     "section_cYETnM",
