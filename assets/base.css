@@ -4166,15 +4166,17 @@ text-component {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 0;
+  width: 100%;
   border-radius: 200px;
   height: 2px; /* Adjust the thickness of the line */
   background-color: #000000a3; /* Adjust the line color */
-  transition: width 0.3s ease; /* Animation duration */
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Smoother animation */
 }
 
 .mega-menu__link:hover::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 .menu-drawer__menu-item--mainlist {
   font-size: 8px;
