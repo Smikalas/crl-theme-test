@@ -1019,7 +1019,7 @@
             "mobile_touch_control": true,
             "block_height": 100,
             "mobile_height": 70,
-            "max_width": 1200,
+            "max_width": 1750,
             "border_radius": 0,
             "background_color": "#000000",
             "show_overlay": false,
