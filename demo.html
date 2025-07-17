@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Testimonials Section Demo</title>
+  
+  <!-- GSAP CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  
+  <!-- Demo Styles -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f8f9fa;
+      padding: 2rem 0;
+    }
+    
+    .demo-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    .demo-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .demo-header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
+    
+    .demo-header p {
+      font-size: 1.2rem;
+      color: #64748b;
+    }
+    
+    /* Include the testimonials CSS here */
+    :root {
+      --accent-color: #f39c12;
+      --text-color: #2c3e50;
+    }
+    
+    /* Copy the CSS from tpt-testimonials.css */
+  </style>
+  
+  <!-- Include testimonials CSS -->
+  <link rel="stylesheet" href="assets/tpt-testimonials.css">
+</head>
+<body>
+  <div class="demo-container">
+    <div class="demo-header">
+      <h1>Elegant Testimonials Section</h1>
+      <p>Horizontal scrolling with GSAP animations, star ratings, and luxury design</p>
+    </div>
+    
+    <!-- Testimonials Section -->
+    <div class="tpt-testimonials" 
+         data-section-id="demo-section"
+         data-auto-play="true"
+         data-play-speed="5000"
+         data-animation-style="slide">
+      
+      <!-- Navigation arrows -->
+      <div class="tpt-testimonials__navigation">
+        <button class="tpt-testimonials__nav tpt-testimonials__nav--prev" aria-label="Previous testimonial">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button class="tpt-testimonials__nav tpt-testimonials__nav--next" aria-label="Next testimonial">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Testimonials container -->
+      <div class="tpt-testimonials__container">
+        <div class="tpt-testimonials__track">
+          
+          <!-- Testimonial 1 -->
+          <div class="tpt-testimonials__slide">
+            <div class="tpt-testimonial__card">
+              <!-- Quote icon -->
+              <div class="tpt-testimonial__quote-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                  <path d="M14.017 21V9.01L21 9L19.951 8.984C18.498 8.984 17.515 8.984 17.015 8.484C16.515 7.984 16.515 7 16.515 5.515V3.515C16.515 2.515 17.515 1.515 18.515 1.515H21.515C22.515 1.515 23.515 2.515 23.515 3.515V8.515C23.515 12.515 20.515 15.515 16.515 15.515H16.017V21H14.017ZM2.017 21V9.01L9 9L7.951 8.984C6.498 8.984 5.515 8.984 5.015 8.484C4.515 7.984 4.515 7 4.515 5.515V3.515C4.515 2.515 5.515 1.515 6.515 1.515H9.515C10.515 1.515 11.515 2.515 11.515 3.515V8.515C11.515 12.515 8.515 15.515 4.515 15.515H4.017V21H2.017Z" fill="currentColor"/>
+                </svg>
+              </div>
+
+              <!-- Testimonial content -->
+              <div class="tpt-testimonial__content">
+                <blockquote class="tpt-testimonial__text">
+                  This product has completely exceeded my expectations. The quality is outstanding and the customer service is exceptional. I couldn't be happier with my purchase!
+                </blockquote>
+              </div>
+
+              <!-- Star rating -->
+              <div class="tpt-testimonial__rating">
+                <span class="tpt-testimonial__star tpt-testimonial__star--filled">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="tpt-testimonial__star tpt-testimonial__star--filled">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="tpt-testimonial__star tpt-testimonial__star--filled">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="tpt-testimonial__star tpt-testimonial__star--filled">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="tpt-testimonial__star tpt-testimonial__star--filled">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                  </svg>
+                </span>
+              </div>
+
+              <!-- Customer info -->
+              <div class="tpt-testimonial__customer">
+                <div class="tpt-testimonial__customer-info">
+                  <div class="tpt-testimonial__avatar tpt-testimonial__avatar--placeholder">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  
+                  <div class="tpt-testimonial__customer-details">
+                    <h4 class="tpt-testimonial__customer-name">Sarah Johnson</h4>
+                    <p class="tpt-testimonial__customer-title">Verified Buyer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonial 2 -->
+          <div class="tpt-testimonials__slide">
+            <div class="tpt-testimonial__card">
+              <div class="tpt-testimonial__quote-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                  <path d="M14.017 21V9.01L21 9L19.951 8.984C18.498 8.984 17.515 8.984 17.015 8.484C16.515 7.984 16.515 7 16.515 5.515V3.515C16.515 2.515 17.515 1.515 18.515 1.515H21.515C22.515 1.515 23.515 2.515 23.515 3.515V8.515C23.515 12.515 20.515 15.515 16.515 15.515H16.017V21H14.017ZM2.017 21V9.01L9 9L7.951 8.984C6.498 8.984 5.515 8.984 5.015 8.484C4.515 7.984 4.515 7 4.515 5.515V3.515C4.515 2.515 5.515 1.515 6.515 1.515H9.515C10.515 1.515 11.515 2.515 11.515 3.515V8.515C11.515 12.515 8.515 15.515 4.515 15.515H4.017V21H2.017Z" fill="currentColor"/>
+                </svg>
+              </div>
+
+              <div class="tpt-testimonial__content">
+                <blockquote class="tpt-testimonial__text">
+                  Amazing experience from start to finish. Fast shipping, excellent packaging, and the product works exactly as described. Highly recommend!
+                </blockquote>
+              </div>
+
+              <div class="tpt-testimonial__rating">
+                <span class="tpt-testimonial__star tpt-testimonial__star--filled">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="tpt-testimonial__star tpt-testimonial__star--filled">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="tpt-testimonial__star tpt-testimonial__star--filled">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="tpt-testimonial__star tpt-testimonial__star--filled">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="tpt-testimonial__star tpt-testimonial__star--filled">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                  </svg>
+                </span>
+              </div>
+
+              <div class="tpt-testimonial__customer">
+                <div class="tpt-testimonial__customer-info">
+                  <div class="tpt-testimonial__avatar tpt-testimonial__avatar--placeholder">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  
+                  <div class="tpt-testimonial__customer-details">
+                    <h4 class="tpt-testimonial__customer-name">Michael Chen</h4>
+                    <p class="tpt-testimonial__customer-title">Happy Customer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Testimonial 3 -->
+          <div class="tpt-testimonials__slide">
+            <div class="tpt-testimonial__card">
+              <div class="tpt-testimonial__quote-icon">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                  <path d="M14.017 21V9.01L21 9L19.951 8.984C18.498 8.984 17.515 8.984 17.015 8.484C16.515 7.984 16.515 7 16.515 5.515V3.515C16.515 2.515 17.515 1.515 18.515 1.515H21.515C22.515 1.515 23.515 2.515 23.515 3.515V8.515C23.515 12.515 20.515 15.515 16.515 15.515H16.017V21H14.017ZM2.017 21V9.01L9 9L7.951 8.984C6.498 8.984 5.515 8.984 5.015 8.484C4.515 7.984 4.515 7 4.515 5.515V3.515C4.515 2.515 5.515 1.515 6.515 1.515H9.515C10.515 1.515 11.515 2.515 11.515 3.515V8.515C11.515 12.515 8.515 15.515 4.515 15.515H4.017V21H2.017Z" fill="currentColor"/>
+                </svg>
+              </div>
+
+              <div class="tpt-testimonial__content">
+                <blockquote class="tpt-testimonial__text">
+                  Outstanding customer service and top-notch products. I've been shopping here for years and they never disappoint. Five stars all the way!
+                </blockquote>
+              </div>
+
+              <div class="tpt-testimonial__rating">
+                <span class="tpt-testimonial__star tpt-testimonial__star--filled">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="tpt-testimonial__star tpt-testimonial__star--filled">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="tpt-testimonial__star tpt-testimonial__star--filled">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="tpt-testimonial__star tpt-testimonial__star--filled">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                  </svg>
+                </span>
+                <span class="tpt-testimonial__star">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                  </svg>
+                </span>
+              </div>
+
+              <div class="tpt-testimonial__customer">
+                <div class="tpt-testimonial__customer-info">
+                  <div class="tpt-testimonial__avatar tpt-testimonial__avatar--placeholder">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  
+                  <div class="tpt-testimonial__customer-details">
+                    <h4 class="tpt-testimonial__customer-name">Emily Rodriguez</h4>
+                    <p class="tpt-testimonial__customer-title">Loyal Customer</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- Pagination dots -->
+      <div class="tpt-testimonials__pagination">
+        <button class="tpt-testimonials__dot tpt-testimonials__dot--active" data-slide="0" aria-label="Go to testimonial 1"></button>
+        <button class="tpt-testimonials__dot" data-slide="1" aria-label="Go to testimonial 2"></button>
+        <button class="tpt-testimonials__dot" data-slide="2" aria-label="Go to testimonial 3"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Include testimonials JavaScript -->
+  <script src="assets/tpt-testimonials.js"></script>
+</body>
+</html>
