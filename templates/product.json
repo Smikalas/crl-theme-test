@@ -412,55 +412,6 @@
     },
     "section_f6fzxQ": {
       "type": "section",
-      "blocks": {
-        "ai_gen_block_b3dd954_ap6ypf": {
-          "type": "ai_gen_block_b3dd954",
-          "settings": {
-            "image": "shopify://shop_images/DALL_E_2025-03-13_20.04.20_-_A_large_sleek_white_paper_cup_filled_with_a_vibrant_purple_drink_splashing_out_dramatically._Above_the_cup_numerous_pills_of_different_shapes_and_c.webp",
-            "heading": "Discover Something Amazing",
-            "subheading": "<p>Experience the perfect blend of style and functionality with our carefully curated collection.</p>",
-            "layout": "image-right",
-            "mobile_image_first": true,
-            "content_gap": 60,
-            "mobile_gap": 30,
-            "heading_size": 48,
-            "subheading_size": 18,
-            "heading_spacing": 20,
-            "background_color": "#ffffff",
-            "heading_color": "#000000",
-            "subheading_color": "#666666",
-            "section_padding": 80,
-            "image_border_radius": 0
-          },
-          "blocks": {}
-        },
-        "ai_gen_block_b3dd954_3YmmgE": {
-          "type": "ai_gen_block_b3dd954",
-          "name": "Scroll Animated Images",
-          "settings": {
-            "image": "shopify://shop_images/backnigh.png",
-            "heading": "Discover Something Amazing",
-            "subheading": "<p>Experience the perfect blend of style and functionality with our carefully curated collection.</p>",
-            "layout": "image-left",
-            "mobile_image_first": true,
-            "content_gap": 60,
-            "mobile_gap": 30,
-            "heading_size": 48,
-            "subheading_size": 18,
-            "heading_spacing": 20,
-            "background_color": "#868686",
-            "heading_color": "#000000",
-            "subheading_color": "#666666",
-            "section_padding": 80,
-            "image_border_radius": 12
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_b3dd954_ap6ypf",
-        "ai_gen_block_b3dd954_3YmmgE"
-      ],
       "custom_css": [],
       "settings": {
         "content_direction": "column",
