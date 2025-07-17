@@ -519,6 +519,15 @@
         "padding-block-end": 0
       }
     },
+    "animated_section_KXag7B": {
+      "type": "animated-section",
+      "name": "Scroll Animated Section",
+      "settings": {
+        "heading": "Add Your",
+        "subheading": "Announcement or Discount Notifications",
+        "heading_color": "#ff0000"
+      }
+    },
     "media_with_content_WJWrBQ": {
       "type": "media-with-content",
       "blocks": {
@@ -911,6 +920,7 @@
   "order": [
     "main",
     "section_f6fzxQ",
+    "animated_section_KXag7B",
     "media_with_content_WJWrBQ",
     "17523514387028f542",
     "product-recommendations",
