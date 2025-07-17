@@ -1038,6 +1038,7 @@
       "block_order": [
         "ai_gen_block_ff6f663_GzLwEE"
       ],
+      "disabled": true,
       "name": "t:names.custom_section",
       "settings": {
         "content_direction": "column",
