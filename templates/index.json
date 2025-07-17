@@ -1025,7 +1025,7 @@
             "show_overlay": false,
             "overlay_color": "rgba(0,0,0,0.3)",
             "overlay_opacity": 0.3,
-            "show_content": false,
+            "show_content": true,
             "title": "Scroll Video",
             "description": "This video plays as you scroll",
             "title_size": 32,
