@@ -1006,37 +1006,6 @@
     "section_iNymGd": {
       "type": "section",
       "blocks": {
-        "scroll_video_wcATF4": {
-          "type": "scroll-video",
-          "name": "Scroll Video",
-          "settings": {
-            "video": "shopify://files/videos/AD Compressed.mp4",
-            "video_url": "",
-            "object_fit": "cover",
-            "object_position": "center center",
-            "scrub_smoothness": 1.6,
-            "speed_based_playback": true,
-            "mobile_touch_control": true,
-            "block_height": 100,
-            "mobile_height": 70,
-            "max_width": 1750,
-            "border_radius": 0,
-            "background_color": "#000000",
-            "show_overlay": false,
-            "overlay_color": "rgba(0,0,0,0.3)",
-            "overlay_opacity": 0.3,
-            "show_content": true,
-            "title": "Scroll Video",
-            "description": "This video plays as you scroll",
-            "title_size": 32,
-            "description_size": 16,
-            "title_weight": "600",
-            "text_color": "#ffffff",
-            "show_progress": true,
-            "progress_color": "#ffffff"
-          },
-          "blocks": {}
-        },
         "ai_gen_block_ff6f663_GzLwEE": {
           "type": "ai_gen_block_ff6f663",
           "name": "Before After Slider",
@@ -1067,7 +1036,6 @@
         }
       },
       "block_order": [
-        "scroll_video_wcATF4",
         "ai_gen_block_ff6f663_GzLwEE"
       ],
       "name": "t:names.custom_section",
