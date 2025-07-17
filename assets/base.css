@@ -4168,7 +4168,7 @@ text-component {
   left: 0;
   width: 100%;
   border-radius: 200px;
-  height: 2px; /* Adjust the thickness of the line */
+  height: 1px; /* Adjust the thickness of the line */
   background-color: #080808; /* Adjust the line color */
   transform: scaleX(0);
   transform-origin: center;
