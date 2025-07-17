@@ -200,7 +200,7 @@ class ScrollVideoComponent {
   }
 
   setupScrollSpeedTracking() {
-    const updateScrollSpeed = () => {
+    this.updateScrollSpeed = () => {
       const currentScrollY = window.scrollY;
       this.scrollSpeed = Math.abs(currentScrollY - this.lastScrollY);
       this.lastScrollY = currentScrollY;
@@ -214,7 +214,7 @@ class ScrollVideoComponent {
       }
     };
 
-    gsap.ticker.add(updateScrollSpeed);
+    gsap.ticker.add(this.updateScrollSpeed);
   }
 
   setupEventListeners() {
@@ -278,7 +278,10 @@ class ScrollVideoComponent {
       this.scrollTrigger.kill();
     }
     
-    gsap.ticker.remove(this.updateScrollSpeed);
+    // Remove scroll speed tracking if it exists
+    if (this.updateScrollSpeed && typeof gsap !== 'undefined') {
+      gsap.ticker.remove(this.updateScrollSpeed);
+    }
   }
 }
 

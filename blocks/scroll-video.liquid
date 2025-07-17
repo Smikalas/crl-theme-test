@@ -131,26 +131,30 @@
 
 <div class="scroll-video-container-{{ scroll_video_id }}" {{ block.shopify_attributes }}>
   <div class="scroll-video-wrapper-{{ scroll_video_id }}">
-    {% if block.settings.video_url != blank %}
+    {% if block.settings.video != blank %}
       <video
         id="scroll-video-{{ scroll_video_id }}"
         class="scroll-video-{{ scroll_video_id }}"
         muted
         playsinline
         preload="metadata"
+        {% if block.settings.poster_image != blank %}poster="{{ block.settings.poster_image | image_url: width: 1920 }}"{% endif %}
       >
-        <source src="{{ block.settings.video_url }}" type="video/mp4">
+        {%- for source in block.settings.video.sources -%}
+          <source src="{{ source.url }}" type="{{ source.mime_type }}">
+        {%- endfor -%}
         Your browser does not support the video tag.
       </video>
-    {% elsif block.settings.video_file != blank %}
+    {% elsif block.settings.video_url != blank %}
       <video
         id="scroll-video-{{ scroll_video_id }}"
         class="scroll-video-{{ scroll_video_id }}"
         muted
         playsinline
         preload="metadata"
+        {% if block.settings.poster_image != blank %}poster="{{ block.settings.poster_image | image_url: width: 1920 }}"{% endif %}
       >
-        <source src="{{ block.settings.video_file | file_url }}" type="video/mp4">
+        <source src="{{ block.settings.video_url }}" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     {% else %}
@@ -222,17 +226,22 @@ document.addEventListener('DOMContentLoaded', function() {
       "content": "Video Settings"
     },
     {
+      "type": "video",
+      "id": "video",
+      "label": "Video",
+      "info": "Upload a video file"
+    },
+    {
       "type": "url",
       "id": "video_url",
       "label": "Video URL",
-      "info": "Direct link to MP4 video file"
+      "info": "Direct link to MP4 video file (use this OR upload a video above)"
     },
     {
-      "type": "file",
-      "id": "video_file",
-      "label": "Video File",
-      "accept": "video/*",
-      "info": "Upload an MP4 video file"
+      "type": "image_picker",
+      "id": "poster_image",
+      "label": "Poster Image",
+      "info": "Preview image shown before video loads"
     },
     {
       "type": "select",

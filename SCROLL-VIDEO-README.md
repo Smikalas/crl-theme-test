@@ -48,7 +48,7 @@ A powerful and customizable video block that plays only while scrolling, using G
 1. Go to Theme Customizer
 2. Add a new section or edit an existing one
 3. Add the "Scroll Video" block
-4. Upload a video or provide a video URL
+4. Upload a video using the video picker OR provide a video URL
 5. Configure settings as needed
 
 ### Video Requirements
@@ -60,8 +60,8 @@ A powerful and customizable video block that plays only while scrolling, using G
 ### Configuration Options
 
 #### Video Settings
-- **Video URL**: Direct link to MP4 file
-- **Video File**: Upload MP4 file directly
+- **Video**: Upload video using Shopify's video picker
+- **Video URL**: Direct link to MP4 file (alternative to upload)
 - **Object Fit**: How video fits container (cover, contain, fill)
 - **Object Position**: Video alignment (center, top, bottom, left, right)
 
