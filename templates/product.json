@@ -455,40 +455,11 @@
             "image_border_radius": 12
           },
           "blocks": {}
-        },
-        "ai_gen_block_ff6f663_BetbEx": {
-          "type": "ai_gen_block_ff6f663",
-          "name": "Before After Slider",
-          "settings": {
-            "heading": "Before & After Comparison",
-            "heading_size": 28,
-            "mobile_heading_size": 20,
-            "mobile_heading_position": 15,
-            "heading_weight": "600",
-            "heading_color": "#000000",
-            "before_image": "shopify://shop_images/Alc_materials.png",
-            "after_image": "shopify://shop_images/3.png",
-            "aspect_ratio": 45,
-            "mobile_aspect_ratio": 100,
-            "initial_position": 50,
-            "slider_color": "#efe9e7",
-            "handle_size": 30,
-            "handle_arrow_color": "#000000",
-            "show_labels": false,
-            "before_label": "Before",
-            "after_label": "After",
-            "label_position": 20,
-            "label_size": 14,
-            "label_color": "#ffffff",
-            "label_background": "#000000"
-          },
-          "blocks": {}
         }
       },
       "block_order": [
         "ai_gen_block_b3dd954_ap6ypf",
-        "ai_gen_block_b3dd954_3YmmgE",
-        "ai_gen_block_ff6f663_BetbEx"
+        "ai_gen_block_b3dd954_3YmmgE"
       ],
       "custom_css": [],
       "settings": {
@@ -517,15 +488,6 @@
         "gradient_direction": "to top",
         "padding-block-start": 15,
         "padding-block-end": 0
-      }
-    },
-    "animated_section_KXag7B": {
-      "type": "animated-section",
-      "name": "Scroll Animated Section",
-      "settings": {
-        "heading": "Add Your",
-        "subheading": "Announcement or Discount Notifications",
-        "heading_color": "#ff0000"
       }
     },
     "media_with_content_WJWrBQ": {
@@ -920,7 +882,6 @@
   "order": [
     "main",
     "section_f6fzxQ",
-    "animated_section_KXag7B",
     "media_with_content_WJWrBQ",
     "17523514387028f542",
     "product-recommendations",
