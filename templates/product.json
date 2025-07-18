@@ -284,7 +284,7 @@
               "type": "accordion",
               "name": "t:names.accordion",
               "settings": {
-                "icon": "caret",
+                "icon": "plus",
                 "dividers": true,
                 "type_preset": "h6",
                 "inherit_color_scheme": true,
@@ -306,6 +306,14 @@
                     "open_by_default": false
                   },
                   "blocks": {
+                    "custom_liquid_jt3aAk": {
+                      "type": "custom-liquid",
+                      "name": "t:names.custom_liquid",
+                      "settings": {
+                        "custom_liquid": "<p id=\"shipping-dates\">Calculating shipping...</p>"
+                      },
+                      "blocks": {}
+                    },
                     "text_axRX8B": {
                       "type": "text",
                       "settings": {
@@ -330,10 +338,23 @@
                         "padding-inline-end": 0
                       },
                       "blocks": {}
+                    },
+                    "icon_V6DPdT": {
+                      "type": "icon",
+                      "name": "t:names.icon",
+                      "settings": {
+                        "icon": "price_tag",
+                        "width": 24,
+                        "link": "",
+                        "open_in_new_tab": false
+                      },
+                      "blocks": {}
                     }
                   },
                   "block_order": [
-                    "text_axRX8B"
+                    "custom_liquid_jt3aAk",
+                    "text_axRX8B",
+                    "icon_V6DPdT"
                   ]
                 },
                 "accordion_row_PHtN6G": {
