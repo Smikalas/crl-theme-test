@@ -306,14 +306,6 @@
                     "open_by_default": false
                   },
                   "blocks": {
-                    "custom_liquid_jt3aAk": {
-                      "type": "custom-liquid",
-                      "name": "t:names.custom_liquid",
-                      "settings": {
-                        "custom_liquid": "<p id=\"shipping-dates\">Calculating shipping...</p>"
-                      },
-                      "blocks": {}
-                    },
                     "text_axRX8B": {
                       "type": "text",
                       "settings": {
@@ -339,12 +331,20 @@
                       },
                       "blocks": {}
                     },
+                    "custom_liquid_jt3aAk": {
+                      "type": "custom-liquid",
+                      "name": "t:names.custom_liquid",
+                      "settings": {
+                        "custom_liquid": "<p id=\"shipping-dates\">Calculating shipping...</p>"
+                      },
+                      "blocks": {}
+                    },
                     "icon_V6DPdT": {
                       "type": "icon",
                       "name": "t:names.icon",
                       "settings": {
-                        "icon": "price_tag",
-                        "width": 24,
+                        "icon": "truck",
+                        "width": 42,
                         "link": "",
                         "open_in_new_tab": false
                       },
@@ -352,8 +352,8 @@
                     }
                   },
                   "block_order": [
-                    "custom_liquid_jt3aAk",
                     "text_axRX8B",
+                    "custom_liquid_jt3aAk",
                     "icon_V6DPdT"
                   ]
                 },
