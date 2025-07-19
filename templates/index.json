@@ -42,7 +42,7 @@
           "type": "ai_gen_block_1e7f907",
           "settings": {
             "button_text": "SHOP NOW",
-            "button_link": "shopify://collections/all",
+            "button_link": "shopify://collections/smirdi1",
             "button_aria_label": "Hi",
             "open_in_new_tab": false,
             "button_color": "#0000000d",
@@ -1023,7 +1023,7 @@
             "initial_position": 50,
             "slider_color": "#f7efef",
             "handle_size": 50,
-            "handle_arrow_color": "#ffffff",
+            "handle_arrow_color": "#000000",
             "show_labels": false,
             "before_label": "Before",
             "after_label": "After",
@@ -1038,7 +1038,6 @@
       "block_order": [
         "ai_gen_block_ff6f663_GzLwEE"
       ],
-      "disabled": true,
       "name": "t:names.custom_section",
       "settings": {
         "content_direction": "column",
