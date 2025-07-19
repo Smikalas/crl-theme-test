@@ -331,14 +331,6 @@
                       },
                       "blocks": {}
                     },
-                    "custom_liquid_jt3aAk": {
-                      "type": "custom-liquid",
-                      "name": "t:names.custom_liquid",
-                      "settings": {
-                        "custom_liquid": "<p id=\"shipping-dates\">Calculating shipping...</p>"
-                      },
-                      "blocks": {}
-                    },
                     "icon_V6DPdT": {
                       "type": "icon",
                       "name": "t:names.icon",
@@ -349,12 +341,20 @@
                         "open_in_new_tab": false
                       },
                       "blocks": {}
+                    },
+                    "custom_liquid_jt3aAk": {
+                      "type": "custom-liquid",
+                      "name": "t:names.custom_liquid",
+                      "settings": {
+                        "custom_liquid": "<p id=\"shipping-dates\">Calculating shipping...</p>"
+                      },
+                      "blocks": {}
                     }
                   },
                   "block_order": [
                     "text_axRX8B",
-                    "custom_liquid_jt3aAk",
-                    "icon_V6DPdT"
+                    "icon_V6DPdT",
+                    "custom_liquid_jt3aAk"
                   ]
                 },
                 "accordion_row_PHtN6G": {
@@ -399,14 +399,6 @@
                 "accordion_row_AGt3Pp",
                 "accordion_row_PHtN6G"
               ]
-            },
-            "custom_liquid_Myfnar": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
-              "settings": {
-                "custom_liquid": "<p id=\"shipping-dates\">Calculating shipping...</p>"
-              },
-              "blocks": {}
             }
           },
           "block_order": [
@@ -414,8 +406,7 @@
             "variant_picker_gyUmGT",
             "buy_buttons",
             "divider",
-            "accordion_rYNebR",
-            "custom_liquid_Myfnar"
+            "accordion_rYNebR"
           ]
         }
       },
