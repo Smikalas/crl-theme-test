@@ -73,7 +73,7 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-      fetch('https://api.ipinfo.io/lite/8.8.8.8?token=6738c55e24351a')
+      fetch('https://ipinfo.io/json?token=6738c55e24351a')
         .then(response => response.json())
         .then(data => {
           const countryCode = data.country;
