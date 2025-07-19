@@ -382,6 +382,20 @@
                         "padding-inline-end": 0
                       },
                       "blocks": {
+                        "product_inventory_8Q7g7E": {
+                          "type": "product-inventory",
+                          "name": "t:names.product_inventory",
+                          "settings": {
+                            "product": "{{ closest.product }}",
+                            "inventory_threshold": 6,
+                            "show_inventory_quantity": true,
+                            "padding-block-start": 0,
+                            "padding-block-end": 0,
+                            "padding-inline-start": 0,
+                            "padding-inline-end": 0
+                          },
+                          "blocks": {}
+                        },
                         "text_irLFpQ": {
                           "type": "text",
                           "name": "t:names.text",
@@ -410,6 +424,7 @@
                         }
                       },
                       "block_order": [
+                        "product_inventory_8Q7g7E",
                         "text_irLFpQ"
                       ]
                     },
