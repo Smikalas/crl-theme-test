@@ -73,40 +73,36 @@
 
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      const lastCheck = localStorage.getItem('shippingDateCheck');
-      const currentTime = new Date().getTime();
+      // Get country code from Shopify's built-in geolocation
+      const countryCode = {{ request.geo.country_code | json }};
+      console.log('Shopify Detected Country:', countryCode);
       
-      // Check if we've done a check in the last 24 hours
-      if (lastCheck) {
-        const lastCheckData = JSON.parse(lastCheck);
-        const timeDiff = currentTime - lastCheckData.timestamp;
-        const hoursDiff = timeDiff / (1000 * 60 * 60);
-        
-        if (hoursDiff < 24) {
-          console.log('Using cached shipping date');
-          updateShippingDates(lastCheckData.countryCode);
-          return;
-        }
+      // Add country selector as fallback
+      const countrySelector = document.createElement('select');
+      countrySelector.id = 'country-selector';
+      countrySelector.className = 'country-selector';
+      countrySelector.innerHTML = `
+        <option value="">Select your country</option>
+        {% for country in shop.enabled_countries %}
+          <option value="{{ country.iso_code }}"{% if country.iso_code == request.geo.country_code %} selected{% endif %}>
+            {{ country.name }}
+          </option>
+        {% endfor %}
+      `;
+      
+      // Add the selector before the shipping dates display
+      const shippingDates = document.getElementById('shipping-dates');
+      if (shippingDates) {
+        shippingDates.parentNode.insertBefore(countrySelector, shippingDates);
       }
-
-      fetch('https://ipinfo.io/json?token=6738c55e24351a')
-        .then(response => response.json())
-        .then(data => {
-          const countryCode = data.country;
-          console.log('Detected Country Code:', countryCode);
-          
-          // Store the check time and country code
-          localStorage.setItem('shippingDateCheck', JSON.stringify({
-            timestamp: currentTime,
-            countryCode: countryCode
-          }));
-          
-          updateShippingDates(countryCode);
-        })
-        .catch(error => {
-          console.error('Error fetching location data:', error);
-          updateShippingDates(null);
-        });
+      
+      // Listen for country changes
+      countrySelector.addEventListener('change', function(e) {
+        updateShippingDates(e.target.value);
+      });
+      
+      // Initial update using Shopify's detected country
+      updateShippingDates(countryCode);
     });    function updateShippingDates(countryCode) {
       console.log('Updating shipping dates with country code:', countryCode);
       const shippingDates = document.getElementById('shipping-dates');
