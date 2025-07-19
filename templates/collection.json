@@ -31,7 +31,9 @@
       "block_order": [
         "jumbo_text_HjkePF"
       ],
-      "custom_css": [],
+      "custom_css": [
+        ".jumbo-text__container jumbo-text {color: orange;}"
+      ],
       "name": "t:names.hero",
       "settings": {
         "link": "",
