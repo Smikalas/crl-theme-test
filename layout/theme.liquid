@@ -71,22 +71,43 @@
     {% endif %}
   </body>
 
-<script>
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
+      const lastCheck = localStorage.getItem('shippingDateCheck');
+      const currentTime = new Date().getTime();
+      
+      // Check if we've done a check in the last 24 hours
+      if (lastCheck) {
+        const lastCheckData = JSON.parse(lastCheck);
+        const timeDiff = currentTime - lastCheckData.timestamp;
+        const hoursDiff = timeDiff / (1000 * 60 * 60);
+        
+        if (hoursDiff < 24) {
+          console.log('Using cached shipping date');
+          updateShippingDates(lastCheckData.countryCode);
+          return;
+        }
+      }
+
       fetch('https://ipinfo.io/json?token=6738c55e24351a')
         .then(response => response.json())
         .then(data => {
           const countryCode = data.country;
           console.log('Detected Country Code:', countryCode);
+          
+          // Store the check time and country code
+          localStorage.setItem('shippingDateCheck', JSON.stringify({
+            timestamp: currentTime,
+            countryCode: countryCode
+          }));
+          
           updateShippingDates(countryCode);
         })
         .catch(error => {
           console.error('Error fetching location data:', error);
           updateShippingDates(null);
         });
-    });
-
-    function updateShippingDates(countryCode) {
+    });    function updateShippingDates(countryCode) {
       console.log('Updating shipping dates with country code:', countryCode);
       const shippingDates = document.getElementById('shipping-dates');
 
