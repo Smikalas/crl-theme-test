@@ -457,6 +457,7 @@
                           "name": "t:names.icon",
                           "settings": {
                             "icon": "truck",
+                            "image_upload": "shopify://shop_images/truck-thin-svgrepo-com.svg",
                             "width": 34,
                             "link": "",
                             "open_in_new_tab": false
