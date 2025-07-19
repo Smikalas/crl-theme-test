@@ -74,13 +74,33 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Get country code from Shopify's built-in geolocation
-      const countryCode = {{ request.geo.country_code | json }};
-      console.log('Shopify Detected Country:', countryCode);
+      {% if request.geo.country_code %}
+        const countryCode = {{ request.geo.country_code | json }};
+      {% else %}
+        // Fallback to getting location from browser if Shopify geolocation is not available
+        if ("geolocation" in navigator) {
+          navigator.geolocation.getCurrentPosition(async function(position) {
+            try {
+              const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${position.coords.latitude}&lon=${position.coords.longitude}`);
+              const data = await response.json();
+              const countryCode = data.address.country_code.toUpperCase();
+              updateShippingDates(countryCode);
+              if (countrySelector) {
+                countrySelector.value = countryCode;
+              }
+            } catch (error) {
+              console.error('Geolocation error:', error);
+            }
+          });
+        }
+        const countryCode = null;
+      {% endif %}
       
       // Add country selector as fallback
       const countrySelector = document.createElement('select');
       countrySelector.id = 'country-selector';
       countrySelector.className = 'country-selector';
+      countrySelector.style.display = 'none'; // Hide by default
       countrySelector.innerHTML = `
         <option value="">Select your country</option>
         {% for country in shop.enabled_countries %}
