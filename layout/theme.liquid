@@ -72,66 +72,24 @@
   </body>
 
 <script>
-    (function() {
-      'use strict';
-      
-      // Configuration
-      const CONFIG = {
-        CACHE_KEY: 'userLocationData',
-        CACHE_TIME_KEY: 'locationCacheTime',
-        CACHE_DURATION: 24 * 60 * 60 * 1000, // 24 hours
-        API_TIMEOUT: 5000, // 5 seconds
-        RETRY_ATTEMPTS: 2,
-        RETRY_DELAY: 1000 // 1 second
-      };
+    document.addEventListener('DOMContentLoaded', function() {
+      fetch('https://ipinfo.io/json?token=6738c55e24351a')
+        .then(response => response.json())
+        .then(data => {
+          const countryCode = data.country;
+          console.log('Detected Country Code:', countryCode);
+          updateShippingDates(countryCode);
+        })
+        .catch(error => {
+          console.error('Error fetching location data:', error);
+          updateShippingDates(null);
+        });
+    });
 
-      // Shipping data map for better maintainability
-      const SHIPPING_DATA = {
-        'AT': { text: 'Estimated shipping to Austria: 5-7 business days', days: '5-7' },
-        'BE': { text: 'Estimated shipping: 4-6 business days', days: '4-6' },
-        'BG': { text: 'Estimated shipping: 6-8 business days', days: '6-8' },
-        'HR': { text: 'Estimated shipping: 5-7 business days', days: '5-7' },
-        'CY': { text: 'Estimated shipping: 6-9 business days', days: '6-9' },
-        'CZ': { text: 'Estimated shipping: 4-6 business days', days: '4-6' },
-        'DK': { text: 'Estimated shipping: 4-6 business days', days: '4-6' },
-        'EE': { text: 'Estimated shipping: 4-6 business days', days: '4-6' },
-        'FI': { text: 'Estimated shipping: 5-7 business days', days: '5-7' },
-        'FR': { text: 'Estimated shipping: 5-9 business days', days: '5-9' },
-        'DE': { text: 'Estimated shipping: 5-8 business days', days: '5-8' },
-        'GR': { text: 'Estimated shipping: 6-10 business days', days: '6-10' },
-        'HU': { text: 'Estimated shipping: 5-7 business days', days: '5-7' },
-        'IE': { text: 'Estimated shipping: 4-6 business days', days: '4-6' },
-        'IT': { text: 'Estimated shipping: 5-9 business days', days: '5-9' },
-        'LV': { text: 'Estimated shipping: 4-6 business days', days: '4-6' },
-        'LT': { text: 'Numatomas pristatymas: 3-5 darbo dienos', days: '3-5' },
-        'LU': { text: 'Estimated shipping: 4-6 business days', days: '4-6' },
-        'MT': { text: 'Estimated shipping: 6-9 business days', days: '6-9' },
-        'NL': { text: 'Estimated shipping: 4-6 business days', days: '4-6' },
-        'PL': { text: 'Estimated shipping: 5-7 business days', days: '5-7' },
-        'PT': { text: 'Estimated shipping: 5-9 business days', days: '5-9' },
-        'RO': { text: 'Estimated shipping: 6-8 business days', days: '6-8' },
-        'SK': { text: 'Estimated shipping: 4-6 business days', days: '4-6' },
-        'SI': { text: 'Estimated shipping: 5-7 business days', days: '5-7' },
-        'ES': { text: 'Estimated shipping: 5-9 business days', days: '5-9' },
-        'SE': { text: 'Estimated shipping: 5-7 business days', days: '5-7' },
-        'US': { text: 'Estimated shipping: 5-10 business days', days: '5-10' },
-        'CA': { text: 'Estimated shipping: 5-7 business days', days: '5-7' },
-        'JP': { text: 'Estimated shipping: 7-10 business days', days: '7-10' },
-        'KR': { text: 'Estimated shipping: 7-10 business days', days: '7-10' },
-        'default': { text: 'Estimated shipping: 7-10 business days', days: '7-10' }
-      };
+    function updateShippingDates(countryCode) {
+      console.log('Updating shipping dates with country code:', countryCode);
+      const shippingDates = document.getElementById('shipping-dates');
 
-<<<<<<< HEAD
-      // Utility functions
-      function isLocalStorageAvailable() {
-        try {
-          const test = '__localStorage_test__';
-          localStorage.setItem(test, test);
-          localStorage.removeItem(test);
-          return true;
-        } catch (e) {
-          return false;
-=======
       if (shippingDates) {
         switch (countryCode) {
           case 'AT':
@@ -199,7 +157,7 @@
             console.log('Set shipping date for LV');
             break;
           case 'LT':
-            shippingDates.innerHTML = 'Numatomas pristatymas Lietuvoje: 2-3 darbo dienos';
+            shippingDates.innerHTML = 'Numatomas pristatymas: 3-5 darbo dienos';
             console.log('Set shipping date for LT');
             break;
           case 'LU':
@@ -262,151 +220,11 @@
             shippingDates.innerHTML = 'Estimated shipping: 7-10 business days';
             console.log('Set default shipping date');
             break;
->>>>>>> 184ae410cff273bc59d2dfe148d7f45bac5f1ad3
         }
-      }
-
-      function getCachedLocation() {
-        if (!isLocalStorageAvailable()) return null;
-        
-        try {
-          const cachedData = localStorage.getItem(CONFIG.CACHE_KEY);
-          const cacheTime = localStorage.getItem(CONFIG.CACHE_TIME_KEY);
-          
-          if (!cachedData || !cacheTime) return null;
-          
-          const age = Date.now() - parseInt(cacheTime, 10);
-          if (age > CONFIG.CACHE_DURATION) {
-            localStorage.removeItem(CONFIG.CACHE_KEY);
-            localStorage.removeItem(CONFIG.CACHE_TIME_KEY);
-            return null;
-          }
-          
-          return JSON.parse(cachedData);
-        } catch (error) {
-          console.warn('Error reading cached location data:', error);
-          return null;
-        }
-      }
-
-      function setCachedLocation(data) {
-        if (!isLocalStorageAvailable()) return;
-        
-        try {
-          localStorage.setItem(CONFIG.CACHE_KEY, JSON.stringify(data));
-          localStorage.setItem(CONFIG.CACHE_TIME_KEY, Date.now().toString());
-        } catch (error) {
-          console.warn('Error caching location data:', error);
-        }
-      }
-
-      function fetchWithTimeout(url, timeout = CONFIG.API_TIMEOUT) {
-        return Promise.race([
-          fetch(url),
-          new Promise((_, reject) => 
-            setTimeout(() => reject(new Error('Request timeout')), timeout)
-          )
-        ]);
-      }
-
-      async function fetchLocationWithRetry(attempts = CONFIG.RETRY_ATTEMPTS) {
-        for (let i = 0; i < attempts; i++) {
-          try {
-            const response = await fetchWithTimeout('https://ipinfo.io/json?token=6738c55e24351a');
-            
-            if (!response.ok) {
-              throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-            }
-            
-            const data = await response.json();
-            
-            if (!data.country) {
-              throw new Error('Invalid response: missing country data');
-            }
-            
-            return data;
-          } catch (error) {
-            console.warn(`Location fetch attempt ${i + 1} failed:`, error.message);
-            
-            if (i === attempts - 1) {
-              throw error;
-            }
-            
-            // Wait before retry
-            await new Promise(resolve => setTimeout(resolve, CONFIG.RETRY_DELAY * (i + 1)));
-          }
-        }
-      }
-
-      function updateShippingDates(countryCode) {
-        const shippingElements = document.querySelectorAll('#shipping-dates, [data-shipping-info]');
-        
-        if (shippingElements.length === 0) {
-          console.warn('No shipping date elements found');
-          return;
-        }
-
-        const shippingInfo = SHIPPING_DATA[countryCode] || SHIPPING_DATA.default;
-        
-        shippingElements.forEach(element => {
-          if (element) {
-            element.innerHTML = shippingInfo.text;
-            element.setAttribute('data-country', countryCode || 'unknown');
-            element.setAttribute('data-shipping-days', shippingInfo.days);
-          }
-        });
-
-        // Dispatch custom event for other scripts to listen to
-        document.dispatchEvent(new CustomEvent('shippingDatesUpdated', {
-          detail: { 
-            countryCode: countryCode || 'unknown', 
-            shippingInfo: shippingInfo 
-          }
-        }));
-
-        console.log(`Shipping dates updated for country: ${countryCode || 'default'}`);
-      }
-
-      async function initializeShippingDates() {
-        try {
-          // Check cache first
-          const cachedData = getCachedLocation();
-          if (cachedData && cachedData.country) {
-            console.log('Using cached location data:', cachedData.country);
-            updateShippingDates(cachedData.country);
-            return;
-          }
-
-          // Fetch fresh data
-          console.log('Fetching fresh location data...');
-          const locationData = await fetchLocationWithRetry();
-          
-          setCachedLocation(locationData);
-          updateShippingDates(locationData.country);
-          
-        } catch (error) {
-          console.error('Failed to fetch location data:', error);
-          updateShippingDates(null);
-        }
-      }
-
-      // Initialize when DOM is ready
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', initializeShippingDates);
       } else {
-        initializeShippingDates();
+        console.error('shipping-dates element not found');
       }
-
-      // Expose utility for manual refresh (useful for testing)
-      window.refreshShippingDates = function() {
-        if (isLocalStorageAvailable()) {
-          localStorage.removeItem(CONFIG.CACHE_KEY);
-          localStorage.removeItem(CONFIG.CACHE_TIME_KEY);
-        }
-        initializeShippingDates();
-      };
-
-    })();
+    }
   </script>
 
 </html>
