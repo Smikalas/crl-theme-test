@@ -41,11 +41,10 @@
                   </a>
                 {% endif %}
               </div>
-              {% unless forloop.last %}
-                {% if section.settings.icon != 'none' %}
-                  <div class="announcement-marquee__separator" aria-hidden="true">
-                    {% case section.settings.icon %}
-                      {% when 'dot' %}
+              {% if section.settings.icon != 'none' %}
+                <div class="announcement-marquee__separator" aria-hidden="true">
+                  {% case section.settings.icon %}
+                    {% when 'dot' %}
                         <span class="icon-dot"></span>
                       {% when 'circle' %}
                         <span class="icon-circle"></span>
