@@ -46,7 +46,7 @@
         "gap_between_elements": 150,
         "color_scheme": "scheme-2",
         "divider_width": 1.5,
-        "icon": "none",
+        "icon": "star",
         "icon_size": 10,
         "icon_color": "#d7d7d7",
         "padding-block-start": 0,
