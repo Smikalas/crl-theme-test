@@ -22,47 +22,7 @@
             "text_style": "body"
           }
         },
-        "announcement_x3rUXW": {
-          "type": "announcement",
-          "settings": {
-            "text": "Sign up for our newsletter",
-            "link": "shopify://blogs/news",
-            "text_style": "body"
-          }
-        },
-        "announcement_mR4j3w": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": "",
-            "text_style": "body"
-          }
-        },
-        "announcement_GGhwiJ": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": "",
-            "text_style": "body"
-          }
-        },
-        "announcement_jh4zQf": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": "",
-            "text_style": "body"
-          }
-        },
         "announcement_8wBwqz": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": "",
-            "text_style": "body"
-          }
-        },
-        "announcement_3ki6c4": {
           "type": "announcement",
           "settings": {
             "text": "Welcome to our store",
@@ -73,12 +33,7 @@
       },
       "block_order": [
         "announcement_prhqB3",
-        "announcement_x3rUXW",
-        "announcement_mR4j3w",
-        "announcement_GGhwiJ",
-        "announcement_jh4zQf",
-        "announcement_8wBwqz",
-        "announcement_3ki6c4"
+        "announcement_8wBwqz"
       ],
       "custom_css": [
         ".announcement-marquee__text {font-weight: bolder;}"
@@ -88,11 +43,11 @@
         "section_width": "full-width",
         "movement_direction": "reverse",
         "speed": 10,
-        "gap_between_elements": 70,
+        "gap_between_elements": 150,
         "color_scheme": "scheme-2",
         "divider_width": 1.5,
-        "icon": "star",
-        "icon_size": 13,
+        "icon": "none",
+        "icon_size": 10,
         "icon_color": "#d7d7d7",
         "padding-block-start": 0,
         "padding-block-end": 0,
