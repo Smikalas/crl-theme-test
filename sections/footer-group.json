@@ -122,7 +122,7 @@
           "type": "logo",
           "name": "t:names.logo",
           "settings": {
-            "inverse": false,
+            "inverse": true,
             "font": "heading",
             "unit": "percent",
             "percent_width": 20,
@@ -221,11 +221,25 @@
             }
           },
           "block_order": []
+        },
+        "payment_icons_89k6nH": {
+          "type": "payment-icons",
+          "name": "t:names.payment_icons",
+          "settings": {
+            "horizontal_alignment": "center",
+            "gap": 10,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "logo_9dWMpn",
-        "footer_utilities_zVWazC"
+        "footer_utilities_zVWazC",
+        "payment_icons_89k6nH"
       ],
       "name": "t:names.footer",
       "settings": {
