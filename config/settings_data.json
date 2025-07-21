@@ -131,7 +131,7 @@
           "secondary_button_hover_background": "#dedede",
           "secondary_button_hover_text": "#000000",
           "secondary_button_hover_border": "#000000",
-          "input_background": "#efe9e7",
+          "input_background": "#565656",
           "input_text_color": "#161616",
           "input_border_color": "rgba(0,0,0,0)",
           "input_hover_background": "#e6e6e6",
