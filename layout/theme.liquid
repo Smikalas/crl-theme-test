@@ -231,31 +231,43 @@
 </script>
 
 <style>
+.video-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
 .video-scroll {
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
-  min-width: 100%;
-  min-height: 100%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   transform: translate(-50%, -50%);
-  z-index: -1;
 }
 
 #videoscrolls {
   height: 500vh;
   position: relative;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
 }
 </style>
 
-<div id="videoscrolls">
-  <video 
-    src="https://assets.codepen.io/39255/output_960.mp4" 
-    playsinline 
-    webkit-playsinline 
-    preload="auto" 
-    muted 
-    class="video-scroll"
-  ></video>
-</div>
+<section class="video-section">
+  <div id="videoscrolls">
+    <video 
+      src="https://assets.codepen.io/39255/output_960.mp4" 
+      playsinline 
+      webkit-playsinline 
+      preload="auto" 
+      muted 
+      class="video-scroll"
+    ></video>
+  </div>
+</section>
 
 </html>
