@@ -85,11 +85,11 @@
           updateShippingDates(event.target.value);
         }
       });
-    });    function updateShippingDates(countryCode) {
+      });
+    
+    function updateShippingDates(countryCode) {
       console.log('Updating shipping dates with country code:', countryCode);
-      const shippingDates = document.getElementById('shipping-dates');
-
-      if (shippingDates) {
+      const shippingDates = document.getElementById('shipping-dates');      if (shippingDates) {
         switch (countryCode) {
           case 'AT':
             shippingDates.innerHTML = 'Estimated shipping to Austria: 5-7 business days';
