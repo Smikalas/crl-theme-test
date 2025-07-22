@@ -109,7 +109,7 @@
       "type": "custom-liquid",
       "name": "t:names.custom_liquid",
       "settings": {
-        "custom_liquid": "<div id=\"videoscrolls\">",
+        "custom_liquid": "<div id=\"videoscrolls\">\n    <video \n      src=\"https://cdn.shopify.com/videos/c/o/v/d22c89546d5f40d3921c613514742087.mp4\" \n      playsinline \n      webkit-playsinline \n      preload=\"auto\" \n      muted \n      class=\"video-scroll\"\n    ></video>\n  </div>",
         "color_scheme": "",
         "section_width": "page-width",
         "padding-block-start": 0,
