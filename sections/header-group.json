@@ -43,7 +43,7 @@
         "section_width": "full-width",
         "movement_direction": "reverse",
         "speed": 10,
-        "gap_between_elements": 150,
+        "gap_between_elements": 50,
         "color_scheme": "scheme-2",
         "divider_width": 1.5,
         "icon": "star",
