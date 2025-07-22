@@ -86,18 +86,18 @@
     width: 8px;
     height: 2px;
     background-color: {{ block.settings.handle_arrow_color }};
+    top: 50%;
+    transform: translateY(-50%);
   }
 
   .ai-slider-handle-{{ ai_gen_id }}::before {
-    top: calc(50% - 4px);
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-135deg);
+    left: calc(50% - 12px);
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
   }
 
   .ai-slider-handle-{{ ai_gen_id }}::after {
-    top: calc(50% + 4px);
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(135deg);
+    right: calc(50% - 12px);
+    clip-path: polygon(0 0, 0 100%, 100% 50%);
   }
 
   .ai-image-labels-{{ ai_gen_id }} {
