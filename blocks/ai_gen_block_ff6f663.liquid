@@ -79,25 +79,19 @@
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
 
-  .ai-slider-handle-{{ ai_gen_id }}::before,
-  .ai-slider-handle-{{ ai_gen_id }}::after {
+  .ai-slider-handle-{{ ai_gen_id }}::before {
     content: "";
     position: absolute;
-    width: 8px;
-    height: 2px;
-    background-color: {{ block.settings.handle_arrow_color }};
     top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .ai-slider-handle-{{ ai_gen_id }}::before {
-    left: calc(50% - 12px);
-    clip-path: polygon(0 50%, 100% 0, 100% 100%);
-  }
-
-  .ai-slider-handle-{{ ai_gen_id }}::after {
-    right: calc(50% - 12px);
-    clip-path: polygon(0 0, 0 100%, 100% 50%);
+    left: 50%;
+    width: 24px;
+    height: 24px;
+    transform: translate(-50%, -50%);
+    background-image: url({{ 'icon-slider-arrows.svg' | asset_url }});
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0 0 1px rgba(0, 0, 0, 0.3));
   }
 
   .ai-image-labels-{{ ai_gen_id }} {
