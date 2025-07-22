@@ -105,6 +105,17 @@
         "padding-block-end": 5
       }
     },
+    "custom_liquid_hKdein": {
+      "type": "custom-liquid",
+      "name": "t:names.custom_liquid",
+      "settings": {
+        "custom_liquid": "<div id=\"videoscrolls\">",
+        "color_scheme": "",
+        "section_width": "page-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
     "section_gdWMnT": {
       "type": "section",
       "blocks": {
@@ -1070,6 +1081,7 @@
   },
   "order": [
     "hero_ATpyG8",
+    "custom_liquid_hKdein",
     "section_gdWMnT",
     "section_NgPURa",
     "section_cYETnM",
