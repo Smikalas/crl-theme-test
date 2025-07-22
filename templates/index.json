@@ -9,6 +9,17 @@
  */
 {
   "sections": {
+    "custom_liquid_JYzptR": {
+      "type": "custom-liquid",
+      "name": "t:names.custom_liquid",
+      "settings": {
+        "custom_liquid": "<div id=\"videoscrolls\"></div>",
+        "color_scheme": "",
+        "section_width": "page-width",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
     "hero_ATpyG8": {
       "type": "hero",
       "blocks": {
@@ -1069,6 +1080,7 @@
     }
   },
   "order": [
+    "custom_liquid_JYzptR",
     "hero_ATpyG8",
     "section_gdWMnT",
     "section_NgPURa",
