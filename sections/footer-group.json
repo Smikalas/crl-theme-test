@@ -65,17 +65,35 @@
           },
           "blocks": {}
         },
-        "button_84rdqX": {
-          "type": "button",
+        "ai_gen_block_1e7f907_tWtMw4": {
+          "type": "ai_gen_block_1e7f907",
+          "name": "Animated Button",
           "settings": {
-            "label": "ABOUT US",
-            "link": "shopify://collections/all",
+            "button_text": "Shop Now",
+            "button_link": "",
+            "button_aria_label": "",
             "open_in_new_tab": false,
-            "style_class": "button-secondary",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
+            "button_color": "#747474",
+            "button_hover_color": "#dcdcdc",
+            "text_color": "#ffffff",
+            "text_hover_color": "#252020",
+            "font_size": 16,
+            "font_weight": "600",
+            "padding_vertical": 15,
+            "padding_horizontal": 30,
+            "border_width": 0,
+            "border_color": "#000000",
+            "border_hover_color": "#333333",
+            "border_radius": 0,
+            "min_width": 200,
+            "margin": 20,
+            "animation_type": "pulse",
+            "animation_color": "#000000",
+            "show_icon": false,
+            "icon_type": "arrow",
+            "icon_size": 20,
+            "icon_spacing": 8,
+            "icon_animation": "slide"
           },
           "blocks": {}
         }
@@ -83,7 +101,7 @@
       "block_order": [
         "text_Lr7LKc",
         "text_VqVHLC",
-        "button_84rdqX"
+        "ai_gen_block_1e7f907_tWtMw4"
       ],
       "name": "t:names.pull_quote",
       "settings": {
