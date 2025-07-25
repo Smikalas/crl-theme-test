@@ -59,10 +59,10 @@
             "border_radius": 0,
             "min_width": 200,
             "margin": 20,
-            "animation_type": "glow",
-            "animation_color": "#ffffff",
+            "animation_type": "slide",
+            "animation_color": "#efe9e7",
             "show_icon": true,
-            "icon_type": "arrow",
+            "icon_type": "star",
             "icon_size": 20,
             "icon_spacing": 10,
             "icon_animation": "rotate"
