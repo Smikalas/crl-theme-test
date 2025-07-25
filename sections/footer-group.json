@@ -185,38 +185,11 @@
                     "link": "https://www.instagram.com/cuirella.official/"
                   },
                   "blocks": {}
-                },
-                "social_link_AXyk6D": {
-                  "type": "_social-link",
-                  "name": "TikTok",
-                  "settings": {
-                    "link": "https://www.tiktok.com/@shopify"
-                  },
-                  "blocks": {}
-                },
-                "social_link_VDjnEK": {
-                  "type": "_social-link",
-                  "name": "X / Twitter",
-                  "settings": {
-                    "link": "https://x.com/shopify"
-                  },
-                  "blocks": {}
-                },
-                "social_link_ac3awK": {
-                  "type": "_social-link",
-                  "name": "YouTube",
-                  "settings": {
-                    "link": "https://www.youtube.com/shopify"
-                  },
-                  "blocks": {}
                 }
               },
               "block_order": [
                 "social_link_Npq33y",
-                "social_link_PfBfDw",
-                "social_link_AXyk6D",
-                "social_link_VDjnEK",
-                "social_link_ac3awK"
+                "social_link_PfBfDw"
               ]
             }
           },
