@@ -124,7 +124,7 @@
             "text_color": "#efe9e7",
             "text_size": 44,
             "text_size_mobile": 24,
-            "text_weight": "400",
+            "text_weight": "700",
             "link": ""
           },
           "blocks": {}
@@ -145,7 +145,7 @@
             "text_color": "#efe9e7",
             "text_size": 44,
             "text_size_mobile": 24,
-            "text_weight": "400",
+            "text_weight": "700",
             "link": ""
           },
           "blocks": {}
@@ -199,7 +199,7 @@
             "overlay_color": "#000000",
             "overlay_opacity": 0.3,
             "overlay_opacity_hover": 0.6,
-            "text": "Discover More",
+            "text": "DISCOVER",
             "text_color": "#ffffff",
             "text_size": 52,
             "text_size_mobile": 24,
