@@ -1002,70 +1002,6 @@
         "padding-block-start": 48,
         "padding-block-end": 48
       }
-    },
-    "section_iNymGd": {
-      "type": "section",
-      "blocks": {
-        "ai_gen_block_ff6f663_GzLwEE": {
-          "type": "ai_gen_block_ff6f663",
-          "name": "Before After Slider",
-          "settings": {
-            "heading": "Choose you desired color",
-            "heading_size": 26,
-            "mobile_heading_size": 17,
-            "mobile_heading_position": 10,
-            "heading_weight": "600",
-            "heading_color": "#000000",
-            "before_image": "shopify://shop_images/Alc_materials.png",
-            "after_image": "shopify://shop_images/backnigh.png",
-            "aspect_ratio": 40,
-            "mobile_aspect_ratio": 95,
-            "initial_position": 50,
-            "slider_color": "#f7efef",
-            "handle_size": 40,
-            "handle_arrow_color": "#000000",
-            "show_labels": false,
-            "before_label": "Before",
-            "after_label": "After",
-            "label_position": 45,
-            "label_size": 17,
-            "label_color": "#ffffff",
-            "label_background": "#0a0903"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_ff6f663_GzLwEE"
-      ],
-      "name": "t:names.custom_section",
-      "settings": {
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
-        "vertical_alignment": "center",
-        "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "flex-start",
-        "vertical_alignment_flex_direction_column": "center",
-        "gap": 12,
-        "section_width": "full-width",
-        "section_height": "",
-        "section_height_custom": 50,
-        "color_scheme": "scheme-2",
-        "background_media": "none",
-        "video_position": "cover",
-        "background_image_position": "cover",
-        "border": "none",
-        "border_width": 1,
-        "border_opacity": 100,
-        "border_radius": 0,
-        "toggle_overlay": false,
-        "overlay_color": "#00000026",
-        "overlay_style": "solid",
-        "gradient_direction": "to top",
-        "padding-block-start": 0,
-        "padding-block-end": 0
-      }
     }
   },
   "order": [
@@ -1073,7 +1009,6 @@
     "section_gdWMnT",
     "section_NgPURa",
     "section_cYETnM",
-    "section_rDp3Hb",
-    "section_iNymGd"
+    "section_rDp3Hb"
   ]
 }
