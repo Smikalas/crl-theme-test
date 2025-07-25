@@ -16,9 +16,9 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h2>NEW COLLECTION OUT NOW!</h2>",
+            "text": "<h4><strong>Withstands the Grind. Adds a Little Shine.</strong></h4>",
             "width": "fit-content",
-            "max_width": "normal",
+            "max_width": "narrow",
             "alignment": "left",
             "type_preset": "rte",
             "font": "var(--font-body--family)",
