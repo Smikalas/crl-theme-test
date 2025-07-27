@@ -144,7 +144,7 @@
             "text_alignment": "center",
             "font_family": "geist_n6",
             "font_size": 56,
-            "mobile_font_size": 32,
+            "mobile_font_size": 20,
             "text_transform": "capitalize",
             "letter_spacing": 2,
             "background_size": "cover",
