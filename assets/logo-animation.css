@@ -1,8 +1,21 @@
+/* Reset perspective on mobile */
 .header-logo {
-  perspective: 1000px;
+  perspective: none;
 }
 
 .header-logo__image {
-  transform-style: preserve-3d;
-  backface-visibility: visible;
+  transform-style: flat;
+  backface-visibility: hidden;
+}
+
+/* Enable animation only on desktop */
+@media screen and (min-width: 768px) {
+  .header-logo {
+    perspective: 1000px;
+  }
+
+  .header-logo__image {
+    transform-style: preserve-3d;
+    backface-visibility: visible;
+  }
 }
