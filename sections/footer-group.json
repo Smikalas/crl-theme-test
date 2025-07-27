@@ -11,6 +11,127 @@
   "type": "footer",
   "name": "t:names.footer",
   "sections": {
+    "section_e9m6hy": {
+      "type": "section",
+      "blocks": {
+        "text_Lr7LKc": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Precision. Purpose. Presence.</strong></p>",
+            "width": "100%",
+            "max_width": "none",
+            "alignment": "center",
+            "type_preset": "h3",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "text_VqVHLC": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>We make things that work better and last longer. Our products solve real problems with clean design and honest materials.</p>",
+            "width": "fit-content",
+            "max_width": "normal",
+            "alignment": "left",
+            "type_preset": "rte",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "ai_gen_block_1e7f907_tWtMw4": {
+          "type": "ai_gen_block_1e7f907",
+          "name": "Animated Button",
+          "settings": {
+            "button_text": "ABOUT US",
+            "button_link": "",
+            "button_aria_label": "",
+            "open_in_new_tab": false,
+            "button_color": "#747474",
+            "button_hover_color": "#dcdcdc",
+            "text_color": "#ffffff",
+            "text_hover_color": "#252020",
+            "font_size": 16,
+            "font_weight": "600",
+            "padding_vertical": 15,
+            "padding_horizontal": 30,
+            "border_width": 0,
+            "border_color": "#000000",
+            "border_hover_color": "#333333",
+            "border_radius": 0,
+            "min_width": 200,
+            "margin": 20,
+            "animation_type": "slide",
+            "animation_color": "#efe9e7",
+            "show_icon": false,
+            "icon_type": "arrow",
+            "icon_size": 20,
+            "icon_spacing": 8,
+            "icon_animation": "slide"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "text_Lr7LKc",
+        "text_VqVHLC",
+        "ai_gen_block_1e7f907_tWtMw4"
+      ],
+      "name": "t:names.pull_quote",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 8,
+        "section_width": "full-width",
+        "section_height": "",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-1",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 13,
+        "padding-block-end": 0
+      }
+    },
     "section_T4HpfU": {
       "type": "section",
       "blocks": {
@@ -174,7 +295,7 @@
                   "type": "_social-link",
                   "name": "Facebook",
                   "settings": {
-                    "link": "https://www.facebook.com/shopify"
+                    "link": "https://www.facebook.com/profile.php?id=61566634876669"
                   },
                   "blocks": {}
                 },
@@ -182,41 +303,14 @@
                   "type": "_social-link",
                   "name": "Instagram",
                   "settings": {
-                    "link": "https://www.instagram.com/shopify/#"
-                  },
-                  "blocks": {}
-                },
-                "social_link_AXyk6D": {
-                  "type": "_social-link",
-                  "name": "TikTok",
-                  "settings": {
-                    "link": "https://www.tiktok.com/@shopify"
-                  },
-                  "blocks": {}
-                },
-                "social_link_VDjnEK": {
-                  "type": "_social-link",
-                  "name": "X / Twitter",
-                  "settings": {
-                    "link": "https://x.com/shopify"
-                  },
-                  "blocks": {}
-                },
-                "social_link_ac3awK": {
-                  "type": "_social-link",
-                  "name": "YouTube",
-                  "settings": {
-                    "link": "https://www.youtube.com/shopify"
+                    "link": "https://www.instagram.com/cuirella.official/"
                   },
                   "blocks": {}
                 }
               },
               "block_order": [
                 "social_link_Npq33y",
-                "social_link_PfBfDw",
-                "social_link_AXyk6D",
-                "social_link_VDjnEK",
-                "social_link_ac3awK"
+                "social_link_PfBfDw"
               ]
             }
           },
@@ -263,6 +357,7 @@
     }
   },
   "order": [
+    "section_e9m6hy",
     "section_T4HpfU",
     "footer"
   ]
